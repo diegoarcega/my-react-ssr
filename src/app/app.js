@@ -7,13 +7,13 @@ import ReactDOM from 'react-dom';
 // import Home from 'app/screens/home'
 
 import DiegoImage from 'file!assets/img/diego.jpg'
-
+import Column from 'components/column'
 
 class App extends React.Component{
 	render(){
 		return(
 		<div className="compoents">
-			<div className="column">
+			<Column>
 				<div className="profileCard">
 					<div className="profileCard-header">
 						<img className="profileCard-photo" src={DiegoImage} alt="Flavio"/>
@@ -36,8 +36,8 @@ class App extends React.Component{
 						</ul>
 					</div>
 				</div>
-			</div>
-			<div className="column">
+			</Column>
+			<Column>
 				<div className="profileCard">
 					<div className="profileCard-header">
 						<img className="profileCard-photo" src={DiegoImage} alt="Flavio"/>
@@ -60,9 +60,9 @@ class App extends React.Component{
 						</ul>
 					</div>
 				</div>
-			</div>
+			</Column>
 			
-			<div className="column">
+			<Column>
 				<div className="profileCard">
 					<div className="profileCard-header">
 						<img className="profileCard-photo" src={DiegoImage} alt="Flavio"/>
@@ -85,7 +85,7 @@ class App extends React.Component{
 						</ul>
 					</div>
 				</div>
-			</div>
+			</Column>
 		</div>
 
 
