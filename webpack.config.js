@@ -2,13 +2,13 @@ var path = require('path');
 
 
 var SRC_DIR = path.resolve(__dirname, 'src');
-var DIST_DIR = path.resolve(__dirname, 'dist');
 
 var CONFIG = {
     entry: SRC_DIR + '/app/app.js',
     output: {
-        path: DIST_DIR,
-        filename: '/bundle.js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js',
+        publicPath: '/assets/'
     },
     resolve: {
         root:[
@@ -26,6 +26,9 @@ var CONFIG = {
             { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream' },
             { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml' }
         ]
+    },
+    devServer: {
+        contentBase: './src'
     },
 }
 

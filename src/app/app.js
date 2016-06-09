@@ -2,6 +2,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import definedRoutes from 'routes/index'
+
 // import Layout from 'layout/header'
 
 // import Home from 'app/screens/home'
@@ -61,7 +63,7 @@ class App extends React.Component{
 					</div>
 				</div>
 			</Column>
-			
+
 			<Column>
 				<div className="profileCard">
 					<div className="profileCard-header">
