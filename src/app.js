@@ -7,12 +7,14 @@ import definedRoutes from 'routes/index'
 // import Layout from 'layout/header'
 import Home from 'screens/Home/home'
 
+import 'assets/style/base.css'
+
 
 
 class App extends React.Component{
 	render(){
 		return(
-		<div className="components">
+		<div>
 			<Home/>
 		</div>
 		);

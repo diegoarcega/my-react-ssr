@@ -20,7 +20,7 @@ var CONFIG = {
     module: {
         loaders: [
             { test: /\.js$/, include: path.join(__dirname, 'src'), loader: 'babel', query:{ presets:['es2015','react'] } },
-            { test: /\.(css|scss)$/, loaders: ['style', 'css', 'sass'] },
+            { test: /\.(css|scss)$/, loaders: ['style', 'css?modules&importLoaders=1&localIdentName=[local]_[hash:base64:5]', 'sass'] },
             { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
             { test: /\.jpg(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
             { test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000' },
