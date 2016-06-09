@@ -5,7 +5,7 @@ import ProfileCardHeader from './header'
 import ProfileCardBody from './body'
 import ProfileCardFooter from './footer'
 
-import Styles from './style.css'
+import Styles from './style.scss'
 
 class ProfileCard extends React.Component{
 	render(){

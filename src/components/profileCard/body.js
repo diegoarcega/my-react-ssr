@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Styles from './style.css'
+import Styles from './style.scss'
 
 class ProfileCardBody extends React.Component{
 	render(){

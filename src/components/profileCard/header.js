@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import DiegoImage from 'assets/img/diego.jpg'
-import Styles from './style.css'
+import Styles from './style.scss'
 
 class ProfileCardHeader extends React.Component{
 	render(){
