@@ -4,7 +4,7 @@ var path = require('path');
 var SRC_DIR = path.resolve(__dirname, 'src');
 
 var CONFIG = {
-    entry: SRC_DIR + '/app/app.js',
+    entry: SRC_DIR + '/app.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
@@ -20,8 +20,9 @@ var CONFIG = {
     module: {
         loaders: [
             { test: /\.js$/, include: path.join(__dirname, 'src'), loader: 'babel', query:{ presets:['es2015','react'] } },
-            { test: /(\.css)$/, loaders: ['style', 'css'] },
+            { test: /\.(css|scss)$/, loaders: ['style', 'css', 'sass'] },
             { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
+            { test: /\.jpg(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
             { test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000' },
             { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream' },
             { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml' }
@@ -30,6 +31,7 @@ var CONFIG = {
     devServer: {
         contentBase: './src'
     },
+    devtool: 'source-map'
 }
 
 module.exports = CONFIG;

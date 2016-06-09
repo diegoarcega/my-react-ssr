@@ -1,21 +1,16 @@
-// React
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import definedRoutes from 'routes/index'
-
-// import Layout from 'layout/header'
-
-// import Home from 'app/screens/home'
-
-import DiegoImage from 'file!assets/img/diego.jpg'
 import Column from 'components/column'
+import Classes from './style.css'
 
-class App extends React.Component{
+import DiegoImage from 'assets/img/diego.jpg'
+
+class Home extends React.Component{
 	render(){
 		return(
-		<div className="compoents">
-			<Column>
+			<div>
+				<Column>
 				<div className="profileCard">
 					<div className="profileCard-header">
 						<img className="profileCard-photo" src={DiegoImage} alt="Flavio"/>
@@ -88,12 +83,9 @@ class App extends React.Component{
 					</div>
 				</div>
 			</Column>
-		</div>
-
-
-		);
+			</div>
+			)
 	}
 }
 
-
-ReactDOM.render(<App/>, document.getElementById('myApp'));
+export default Home
