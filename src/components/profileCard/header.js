@@ -1,15 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import DiegoImage from 'assets/img/diego.jpg'
-import Styles from './style.scss'
 
 class ProfileCardHeader extends React.Component{
 	render(){
 		return(
-				<div className={Styles.profileCard_header}>
-					<img className={Styles.profileCard_photo} src={DiegoImage} alt="Flavio"/>
-					<p className={Styles.profileCard_title}>Diego Arcega</p>
+				<div className={this.props.Styles.profileCard_header}>
+					<img className={this.props.Styles.profileCard_photo} src={this.props.image} alt={this.props.title} />
+					<p className={this.props.Styles.profileCard_title}>{this.props.title}</p>
 				</div>
 			)
 	}

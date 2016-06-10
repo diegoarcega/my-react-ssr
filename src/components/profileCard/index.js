@@ -11,9 +11,9 @@ class ProfileCard extends React.Component{
 	render(){
 		return(
 				<div className={Styles.profileCard}>
-					<ProfileCardHeader/>					
-					<ProfileCardBody/>					
-					<ProfileCardFooter/>					
+					<ProfileCardHeader Styles={Styles} title={this.props.title} image={this.props.image} />					
+					<ProfileCardBody Styles={Styles}/>					
+					<ProfileCardFooter Styles={Styles}/>					
 				</div>
 			)
 	}

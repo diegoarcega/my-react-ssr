@@ -1,12 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Styles from './style.scss'
 
 class ProfileCardFooter extends React.Component{
 	render(){
 		return(
-				<div className={Styles.profileCard_footer}>
+				<div className={this.props.Styles.profileCard_footer}>
 						<ul>
 							<li>
 								<p>my social midias</p>

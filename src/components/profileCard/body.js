@@ -1,12 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Styles from './style.scss'
 
 class ProfileCardBody extends React.Component{
 	render(){
 		return(
-				<div className={Styles.profileCard_body}>
+				<div className={this.props.Styles.profileCard_body}>
 					<p>my bio</p>
 				</div>
 			)
