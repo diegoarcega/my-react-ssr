@@ -10,24 +10,17 @@ import RuanIMG from 'assets/img/flavio.jpg'
 
 import { Link } from 'react-router'
 
-const styles = {
-	'textAlign':'center',
-	'background': '#00BCD4',
-	'margin':'0'
-}
-
 const userData = [
 			{name: 'Flavio', photo: FlavioIMG },
 			{name: 'Diego', photo: DiegoIMG },
 			{name: 'Ruan', photo: RuanIMG }
 		]
 
+
 class Home extends React.Component{
 	render(){
 		return(
 			<div>
-				<p style={styles}><Link to="/login">go to Login screen</Link></p>
-
 				{userData.map((user, index) => (
 					<Column key={index}>
 						<ProfileCard title={user.name} image={user.photo}></ProfileCard>

@@ -6,7 +6,7 @@ class ProfileCardFooter extends React.Component{
 	render(){
 		return(
 				<div className={this.props.Styles.profileCard_footer}>
-						<ul>
+						<ul className="list-unstyled">
 							<li>
 								<p>my social midias</p>
 							</li>

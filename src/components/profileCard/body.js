@@ -6,7 +6,7 @@ class ProfileCardBody extends React.Component{
 	render(){
 		return(
 				<div className={this.props.Styles.profileCard_body}>
-					<p>my bio</p>
+					<p className="text-xs-center">my bio</p>
 				</div>
 			)
 	}
