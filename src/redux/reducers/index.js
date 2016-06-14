@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
-import log from './log'
+import Todo from './todo'
 
 
 export default combineReducers({
-	 log
+	Todo
 })
