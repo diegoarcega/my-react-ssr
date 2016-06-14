@@ -7,8 +7,6 @@ import { Provider } from 'react-redux'
 import routes from './routes'
 import configureStore from 'redux/configureStore'
 
-import 'assets/style/base.scss'
-
 let store = configureStore();
 
 ReactDOM.render(

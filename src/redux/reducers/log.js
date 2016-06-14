@@ -2,12 +2,11 @@ const initialState = {
 	text : 'I am the initial state'
 }
 
-export default function loge(state = initialState, action){
-	const newState = { ...state }
-
-	console.log(newState)
-	
+const log = function (state = initialState, action) {
+	let newState = { ...state}
 	return newState
 }
+
+export default log
 
 
