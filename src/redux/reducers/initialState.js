@@ -1,5 +1,8 @@
-export default {
+const InitialState = {
 	todos: [{
-		text: 'I am the first item in the state tree'
+		id: 0,
+		text: 'InitialState'
 	}]
 }
+
+export default InitialState
