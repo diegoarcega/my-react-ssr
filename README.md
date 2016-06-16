@@ -1,4 +1,7 @@
 Learning React/Redux
 -----
-This repository was created so I could practice ReactJS from scratch and receive feedback from you guys on what I can do better while coding with react.
-Please give your suggestions on my code by creating an issue. Thanks for your help. :) 
+
+This repository was created so I could practice ReactJS from scratch and receive feedback on what I can do better while coding with react.
+
+
+> styles are not being addressed at this moment, so I am just importing from a cdn

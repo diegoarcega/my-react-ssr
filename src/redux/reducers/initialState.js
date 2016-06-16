@@ -1,8 +1,5 @@
 const InitialState = {
-	todos: [{
-		id: 0,
-		text: 'InitialState'
-	}]
+	todos: []
 }
 
 export default InitialState

@@ -1,13 +1,13 @@
-// React
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, browserHistory } from 'react-router';
 import { Provider } from 'react-redux'
-
 import routes from './routes'
-import configureStore from 'redux/configureStore'
+import configureStore from './redux/configureStore'
 
-let store = configureStore();
+let store = configureStore()
+
+
 
 ReactDOM.render(
 	<Provider store={store}>

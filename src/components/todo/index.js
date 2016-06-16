@@ -6,7 +6,6 @@ import TodoList from './list'
 
 export default class Todo extends Component{
 
-
 	render(){
 		return(
 				<div>
@@ -19,7 +18,7 @@ export default class Todo extends Component{
 					<p></p>
 					<div className="row">
 						<div className="col-sm-12">
-							<TodoList/>
+							<TodoList listItems={this.props.list}/>
 						</div>
 					</div>
 				</div>
