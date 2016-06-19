@@ -13,6 +13,7 @@ class Nav extends React.Component{
 							<li className="nav-item"><Link className="nav-link" activeClassName="active" to="/todo">TodoList</Link></li>
 							<li className="nav-item"><Link className="nav-link" activeClassName="active" to="/login">Login</Link></li>
 							<li className="nav-item"><Link className="nav-link" activeClassName="active" to="/signup">Signup</Link></li>
+							<li className="nav-item"><Link className="nav-link" activeClassName="active" to="/crave">Crave</Link></li>
 					</ul>
 					</div>
 				</nav>

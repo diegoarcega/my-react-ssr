@@ -1,5 +1,3 @@
-
-
 let actions = {
 	addTodo(text){
 		return {

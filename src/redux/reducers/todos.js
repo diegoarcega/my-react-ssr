@@ -3,7 +3,7 @@ import initialState from './initialState'
 function generateId (todos) {
 	return todos.reduce((maxId, todo) => {
     return Math.max(todo.id, maxId)
-  }, -1) + 1
+  }, 0) + 1
 }
 
 export default function todoReducer(todos = initialState.todos, action) {

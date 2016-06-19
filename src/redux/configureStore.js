@@ -1,10 +1,13 @@
 import React from 'react'
-import { createStore } from 'redux'
-
-import reducers from './reducers'
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import rootReducers from './reducers'
 
 const configureStore = () => {
-	return createStore(reducers)
+	return createStore(
+		rootReducers,
+		applyMiddleware(thunk)
+		)
 }
 
 export default configureStore
