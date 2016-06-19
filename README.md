@@ -8,4 +8,6 @@ npm install
 npm run dev
 ```
 
+open localhost:8080
+
 > styles are not being addressed at this moment, so I am just importing them from a cdn
