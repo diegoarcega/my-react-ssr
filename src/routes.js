@@ -10,7 +10,7 @@ import CraveScreen from 'screens/Crave/Crave'
 
 export default (
 	<Route path="/" component={Layout}>
-			<IndexRoute component={CraveScreen}/>
+			<IndexRoute component={TodoScreen}/>
       <Route path="/home" component={HomeScreen} />
       <Route path="/login" component={LoginScreen} />
       <Route path="/signup" component={SignupScreen} />

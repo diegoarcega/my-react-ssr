@@ -1,4 +1,4 @@
-import Axios from 'axios'
+import Request from 'axios'
 import CraveLayout  from 'crave_foods_test'
 
 let actions = {
@@ -10,7 +10,7 @@ let actions = {
 	},
 	getLayout(){
 		return (dispatch, getState) => {
-			Axios.get('https://react-3f043.firebaseio.com/box.json').then(result => {
+			Request.get('https://react-3f043.firebaseio.com/box.json').then(result => {
 				let layout = CraveLayout.getLayout(result.data)
 				dispatch(actions.setLayout(layout))
 			})

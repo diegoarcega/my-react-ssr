@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import CircularProgress from 'material-ui/CircularProgress'
 
 export default class TodoList extends Component{
-
-	onMarkDone(id){
-		this.props.markDone(id)
+	onMarkDone(_item){
+		this.props.markDone(_item)
 	}
 
-	onDelete(id){
-		this.props.remove(id)
+	onDelete(key){
+		this.props.remove(key)
 	}
 
 	render(){
@@ -17,24 +19,30 @@ export default class TodoList extends Component{
 			notread: { textDecoration: 'none'},
 		}
 		return(
-				<div>
-  				<small className="text-muted">
-  					{this.props.list.length > 0 ? 'Items already in the list': 'Add items in the field above'}
-  				</small>
+				<MuiThemeProvider muiTheme={getMuiTheme()}>
+					<div>
+					<div className="text-xs-center">
+	  				<small className="text-muted"></small>
+	  				{!this.props.list.loaded ? <CircularProgress/> : ''}
+	  			</div>
 					<ul className="list-group">
-						{this.props.list.map((item, index) =>(
+						{ this.props.list.loaded ? this.props.list.todos.map((item, index) =>(
 							<li className="list-group-item" key={index}>
-								<span style={item.completed ? styles.read : styles.notread }>{item.text} {item.id}</span>
+								<span style={item.completed ? styles.read : styles.notread }>
+									{item.text}
+									<small className="text-muted"> id: {item['.key']}</small>
+								</span>
 								<span>
 									<div className="btn-group btn-group-sm pull-xs-right" role="group">
-											<button type="button" onClick={ this.onMarkDone.bind(this, item.id) } className="btn btn-secondary">Mark as {item.completed ? `not done`: `done`}</button>
-										  <button type="button" onClick={ this.onDelete.bind(this, item.id) }className="btn btn-secondary">Delete</button>
+											<button type="button" onClick={ this.onMarkDone.bind(this, item) } className="btn btn-secondary">Mark as {item.completed ? `not done`: `done`}</button>
+										  <button type="button" onClick={ this.onDelete.bind(this, item['.key']) }className="btn btn-secondary">Delete</button>
 									</div>
 								</span>
 							</li>
-						))}
+						)): ''}
 					</ul>
-				</div>
+					</div>
+				</MuiThemeProvider>
 			)
 	}
 }
