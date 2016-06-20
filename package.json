@@ -20,9 +20,12 @@
     "url": "https://github.com/diegoarcega/learning_react/issues"
   },
   "dependencies": {
+    "axios": "^0.12.0",
     "bootstrap": "~3.3.6",
-    "crave_foods_test": "0.0.4",
+    "crave_foods_test": "0.0.5",
     "firebase": "^3.0.5",
+    "material-ui": "^0.15.0",
+    "q": "^1.4.1",
     "react": "~15.1.0",
     "react-dom": "~15.1.0",
     "react-redux": "~4.4.5",

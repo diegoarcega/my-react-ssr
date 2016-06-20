@@ -1,23 +1,46 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import actions from '../../redux/actions/layout'
 
-import CraveLayout  from 'crave_foods_test'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import CircularProgress from 'material-ui/CircularProgress';
+
 import List from '../../components/crave/list'
+
 
 class Crave extends Component{
 	componentWillMount() {
-		this.layoutItems = CraveLayout.getLayout()
+	  this.props.actions.getLayout()
 	}
 	render(){
 		return(
-		  <div>
-		  	{ this.layoutItems.map((row, index) => (
-		  			<List key={index} list={row}/>
-		  	))
-		  	}
-		  </div>
+			<MuiThemeProvider muiTheme={getMuiTheme()}>
+			  <div>
+			  	{this.props.layout.length ? '':
+			  		<div className="text-xs-center"><CircularProgress/></div>
+			  	}
+			  	{ this.props.layout.map((row, index) => (
+			  			<List key={index} list={row}/>
+			  	))
+			  	}
+			  </div>
+		  </MuiThemeProvider>
 			)
 	}
 }
 
-export default Crave
+
+function mapStateToProps (state) {
+	return state
+}
+
+function mapDispatchToProps (dispatch) {
+	return {
+		actions: bindActionCreators(actions, dispatch)
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Crave)
