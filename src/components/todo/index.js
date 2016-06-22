@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import ReactDOM from 'react-dom'
 
 import TodoADD from './add'
 import TodoList from './list'

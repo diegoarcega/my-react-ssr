@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import CircularProgress from 'material-ui/CircularProgress'
@@ -46,4 +45,3 @@ export default class TodoList extends Component{
 			)
 	}
 }
-

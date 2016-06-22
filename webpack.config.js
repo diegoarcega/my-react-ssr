@@ -29,8 +29,10 @@ var CONFIG = {
             { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml' }
         ]
     },
+
     devServer: {
-        contentBase: './src'
+        contentBase: './src',
+        hot: true
     },
     devtool: 'source-map'
 }

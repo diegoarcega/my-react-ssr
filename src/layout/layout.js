@@ -1,19 +1,14 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-
 import Header from './header'
 
-class Layout extends React.Component {
-    render() {
-        return(
-        	<section>
-	        	<Header/>
-	        	<div className="container">
-	        		{this.props.children}
-	        	</div>
-        	</section>
-        	)
-    }
-}
+
+const Layout = ({children}) => (
+  <section>
+    <Header/>
+    <div className="container">
+      {children}
+    </div>
+  </section>
+)
 
 export default Layout;

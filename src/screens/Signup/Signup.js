@@ -1,8 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-
-
-import { Link } from 'react-router'
 
 class Signup extends React.Component{
 	render(){

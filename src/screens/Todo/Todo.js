@@ -19,6 +19,10 @@ class Todo extends Component{
 	  })
 	}
 
+  shouldComponentUpdate(nextProps, nextState){
+    return this.state.listRequest.todos !== nextProps.todos
+  }
+
 	componentWillUpdate(nextProps, nextState) {
 		this.state.listRequest.todos = nextProps.todos
 		this.state.listRequest.loaded = true
