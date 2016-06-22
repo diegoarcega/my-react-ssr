@@ -4,8 +4,9 @@
   "description": "practising react",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server webpack.config.js --inline --hot",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack-dev-server --config webpack.config.dev.js --inline --hot",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "webpack --config webpack.config.dist.js -p"
   },
   "repository": {
     "type": "git",
@@ -21,17 +22,14 @@
   },
   "dependencies": {
     "axios": "^0.12.0",
-    "bootstrap": "~3.3.6",
-    "crave_foods_test": "0.0.5",
+    "crave_foods_test": "0.0.6",
     "firebase": "^3.0.5",
     "material-ui": "^0.15.0",
     "q": "^1.4.1",
     "react": "~15.1.0",
     "react-dom": "~15.1.0",
-    "react-mixin": "^3.0.5",
     "react-redux": "~4.4.5",
     "react-router": "~2.4.1",
-    "reactfire": "^1.0.0",
     "redux": "~3.5.2",
     "redux-thunk": "^2.1.0"
   },

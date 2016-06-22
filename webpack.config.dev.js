@@ -1,5 +1,5 @@
 var path = require('path');
-
+var webpack = require('webpack');
 
 var SRC_DIR = path.resolve(__dirname, 'src');
 
@@ -29,7 +29,6 @@ var CONFIG = {
             { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml' }
         ]
     },
-
     devServer: {
         contentBase: './src',
         hot: true
