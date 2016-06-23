@@ -6,8 +6,10 @@
   "scripts": {
     "dev": "webpack-dev-server --config webpack.config.dev.js --inline --hot",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf dist/ ",
     "copy": "cp src/index.html dist",
-    "dist": "webpack --config webpack.config.dist.js -p"
+    "prod": "webpack --config webpack.config.dist.js -p",
+    "dist": "npm run clean &&  npm run prod && npm run copy"
   },
   "repository": {
     "type": "git",
