@@ -33,6 +33,7 @@ class Todo extends Component{
 			<div className="row">
 				<div className="col-xs-12">
 					<p></p>
+          <p>Firebase todo list</p>
 					<TodoAdd addTodo={this.props.actions.add} />
 					<p></p>
 					<TodoList

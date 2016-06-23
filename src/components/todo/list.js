@@ -29,7 +29,6 @@ export default class TodoList extends Component{
 							<li className="list-group-item" key={index}>
 								<span style={item.completed ? styles.read : styles.notread }>
 									{item.text}
-									<small className="text-muted"> id: {item['.key']}</small>
 								</span>
 								<span>
 									<div className="btn-group btn-group-sm pull-xs-right" role="group">
