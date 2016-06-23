@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --config webpack.config.dev.js --inline --hot",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "copy": "cp src/index.html dist",
     "dist": "webpack --config webpack.config.dist.js -p"
   },
   "repository": {
@@ -23,6 +24,7 @@
   "dependencies": {
     "axios": "^0.12.0",
     "babel-polyfill": "^6.9.1",
+    "copy": "^0.2.3",
     "crave_foods_test": "0.0.6",
     "firebase": "^3.0.5",
     "material-ui": "^0.15.0",
