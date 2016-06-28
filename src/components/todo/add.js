@@ -34,7 +34,7 @@ export default class TodoAdd extends Component{
 						<div className="input-group">
 				      <input type="text" ref="addInput" className="form-control"
 				      	onChange={ this.handleChange.bind(this) }
-				      	value={this.state.inputText} placeholder="Add your item here"/>
+				      	value={this.state.inputText} required placeholder="Add your item here"/>
 				      <span className="input-group-btn">
 				        <button className="btn btn-primary" type="submit">Add Item</button>
 				      </span>

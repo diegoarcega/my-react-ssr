@@ -21,8 +21,8 @@ export default class TodoList extends Component{
 				<MuiThemeProvider muiTheme={getMuiTheme()}>
 					<div>
 					<div className="text-xs-center">
-	  				<small className="text-muted"></small>
-	  				{!this.props.list.loaded ? <CircularProgress/> : ''}
+						{!this.props.list.loaded ? <CircularProgress/> : ''}
+						{!this.props.list.todos.length && this.props.list.loaded ? <small className="text-muted">The list is empty, add some items ;)</small> : ''}
 	  			</div>
 					<ul className="list-group">
 						{ this.props.list.loaded ? this.props.list.todos.map((item, index) =>(

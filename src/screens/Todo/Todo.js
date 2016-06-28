@@ -24,7 +24,7 @@ class Todo extends Component{
   }
 
 	componentWillUpdate(nextProps, nextState) {
-		this.state.listRequest.todos = nextProps.todos
+		this.state.listRequest.todos = nextProps.todos.reverse()
 		this.state.listRequest.loaded = true
 	}
 

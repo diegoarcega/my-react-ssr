@@ -1,5 +1,7 @@
-import Firebase from 'firebase'
+import Firebase from 'firebase/app'
+import 'firebase/database'
 
+// I let you hack my app ;P
 let config = {
 	apiKey: 'I4zVeHs1uQsjCn675EymEspHhL3J0QDzaGZnFpBp',
 	databaseURL: 'https://react-3f043.firebaseio.com/',

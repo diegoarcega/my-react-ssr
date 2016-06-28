@@ -9,7 +9,8 @@
     "clean": "rm -rf dist/ ",
     "copy": "cp src/index.html dist",
     "prod": "webpack --config webpack.config.dist.js -p",
-    "dist": "npm run clean &&  npm run prod && npm run copy"
+    "dist": "npm run clean &&  npm run prod && npm run copy",
+    "deploy:surge": "surge --project ./dist --domain diegoarcega-react.surge.sh"
   },
   "repository": {
     "type": "git",
