@@ -10,7 +10,7 @@
     "copy": "cp src/index.html dist",
     "prod": "webpack --config webpack.config.dist.js -p",
     "dist": "npm run clean &&  npm run prod && npm run copy",
-    "deploy:surge": "surge --project ./dist --domain diegoarcega-react.surge.sh"
+    "deploy": "surge --project ./dist --domain diegoarcega-react.surge.sh"
   },
   "repository": {
     "type": "git",
@@ -30,12 +30,14 @@
     "copy": "^0.2.3",
     "crave_foods_test": "0.0.6",
     "firebase": "^3.0.5",
-    "material-ui": "^0.15.0",
+    "material-ui": "^0.15.1",
+    "muicss": "^0.6.5",
     "q": "^1.4.1",
     "react": "~15.1.0",
     "react-dom": "~15.1.0",
     "react-redux": "~4.4.5",
     "react-router": "~2.4.1",
+    "react-tap-event-plugin": "^1.0.0",
     "redux": "~3.5.2",
     "redux-thunk": "^2.1.0"
   },

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-
 import TodoList from '../../components/todo/list'
 import TodoAdd from '../../components/todo/add'
 import actions from '../../redux/actions'
@@ -30,10 +29,10 @@ class Todo extends Component{
 
 	render(){
 		return(
-			<div className="row">
-				<div className="col-xs-12">
+			<div className="mui-row">
+				<div className="mui-col-xs-12">
 					<p></p>
-          <p>Firebase todo list</p>
+          <p className="mui--text-dark-secondary">This is a Firebase todo list</p>
 					<TodoAdd addTodo={this.props.actions.add} />
 					<p></p>
 					<TodoList

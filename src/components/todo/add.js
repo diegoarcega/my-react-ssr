@@ -27,19 +27,31 @@ export default class TodoAdd extends Component{
 	}
 
 	render(){
+		let formStyles = {
+			form: {
+				textAlign:'right'
+			},
+			input : {
+				minWidth: '50%'
+			}
+		}
 		return(
 				<div>
-					<small className="text-muted">Here you add an item to the list</small>
-					<form onSubmit={ this.onSubmitItem.bind(this) }>
-						<div className="input-group">
-				      <input type="text" ref="addInput" className="form-control"
-				      	onChange={ this.handleChange.bind(this) }
-				      	value={this.state.inputText} required placeholder="Add your item here"/>
-				      <span className="input-group-btn">
-				        <button className="btn btn-primary" type="submit">Add Item</button>
-				      </span>
-			    	</div>
-				  </form>
+						<form onSubmit={ this.onSubmitItem.bind(this) }  style={formStyles.form} className="mui-form--inline">
+
+								<div className="mui-textfield" style={formStyles.input}>
+						      <input type="text"
+									 	ref="addInput"
+						      	onChange={ this.handleChange.bind(this) }
+						      	value={this.state.inputText} required
+										placeholder="Add a new item here"
+										/>
+								</div>
+
+								<button className="mui-btn mui-btn--primary" type="submit">Add Item</button>
+
+					  </form>
+
 				</div>
 			)
 	}

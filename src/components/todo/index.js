@@ -9,14 +9,14 @@ export default class Todo extends Component{
 		return(
 				<div>
 					<p></p>
-					<div className="row">
-						<div className="col-sm-12">
+					<div className="mui-row">
+						<div className="mui-col-sm-12">
 							<TodoADD/>
 						</div>
 					</div>
 					<p></p>
-					<div className="row">
-						<div className="col-sm-12">
+					<div className="mui-row">
+						<div className="mui-col-sm-12">
 							<TodoList listItems={this.props.list}/>
 						</div>
 					</div>

@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import CircularProgress from 'material-ui/CircularProgress'
+import {List, ListItem} from 'material-ui/List'
+import Divider from 'material-ui/Divider'
+import ActionDelete from 'material-ui/svg-icons/action/delete'
+import ActionDone from 'material-ui/svg-icons/action/done'
+import ContentUndo from 'material-ui/svg-icons/content/undo'
+import IconButton from 'material-ui/IconButton'
 
 export default class TodoList extends Component{
 	onMarkDone(_item){
@@ -13,34 +17,62 @@ export default class TodoList extends Component{
 	}
 
 	render(){
-		let styles = {
-			read: { textDecoration: 'line-through'},
+		let textStyles = {
+			read: {
+				textDecoration: 'line-through',
+				color: '#4CAF50'
+			},
 			notread: { textDecoration: 'none'},
 		}
+
+		let listStyles = {
+			backgroundColor: '#fff',
+			borderTop: '1px solid #eee'
+		}
+
+		const todoControls = item => (
+			<div>
+				<IconButton
+					touch={true}
+					onClick={this.onMarkDone.bind(this, item)}
+				>
+					{item.completed ? <ContentUndo color={'silver'} /> : <ActionDone color={'silver'} /> }
+				</IconButton>
+				<IconButton
+					touch={true}
+					onClick={this.onDelete.bind(this, item['.key'])}
+				>
+					<ActionDelete color={'silver'} />
+				</IconButton>
+			</div>
+		)
+
+		const todoText = item => (
+			<span style={item.completed ? textStyles.read : textStyles.notread }>
+				{item.text}
+			</span>
+		)
+
 		return(
-				<MuiThemeProvider muiTheme={getMuiTheme()}>
-					<div>
-					<div className="text-xs-center">
-						{!this.props.list.loaded ? <CircularProgress/> : ''}
-						{!this.props.list.todos.length && this.props.list.loaded ? <small className="text-muted">The list is empty, add some items ;)</small> : ''}
+				<div>
+					<div className="mui--text-center">
+						{!this.props.list.loaded ? <CircularProgress size={0.5}/> : ''}
+						{!this.props.list.todos.length && this.props.list.loaded ? <p className="mui--text-dark-hint">The list is empty, add some items ;)</p> : ''}
 	  			</div>
-					<ul className="list-group">
-						{ this.props.list.loaded ? this.props.list.todos.map((item, index) =>(
-							<li className="list-group-item" key={index}>
-								<span style={item.completed ? styles.read : styles.notread }>
-									{item.text}
-								</span>
-								<span>
-									<div className="btn-group btn-group-sm pull-xs-right" role="group">
-											<button type="button" onClick={ this.onMarkDone.bind(this, item) } className="btn btn-secondary">Mark as {item.completed ? `not done`: `done`}</button>
-										  <button type="button" onClick={ this.onDelete.bind(this, item['.key']) }className="btn btn-secondary">Delete</button>
-									</div>
-								</span>
-							</li>
-						)): ''}
-					</ul>
-					</div>
-				</MuiThemeProvider>
+
+					<List>
+     				{ this.props.list.loaded ? this.props.list.todos.map((item, index) =>(
+							<ListItem
+								disabled={true}
+								key={index}
+			          primaryText={todoText(item)}
+								style={listStyles}
+								rightIconButton={todoControls(item)}
+			        />
+							)): ''}
+     			</List>
+
+				</div>
 			)
 	}
 }
