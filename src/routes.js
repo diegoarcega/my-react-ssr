@@ -8,7 +8,7 @@ import TodoScreen from 'screens/Todo/Todo'
 
 export default (
 	<Route path="/" component={Layout}>
-			<IndexRoute component={TodoScreen}/>
+			<IndexRoute component={HomeScreen}/>
       <Route path="/home" component={HomeScreen} />
       <Route path="/login" component={LoginScreen} />
       <Route path="/todo" component={TodoScreen} />

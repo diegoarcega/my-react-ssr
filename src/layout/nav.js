@@ -19,7 +19,6 @@ class Nav extends Component {
   }
 
   handleToggle(){
-    console.log('dasda')
     this.setState({open: !this.state.open})
   }
 
