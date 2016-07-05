@@ -4,12 +4,12 @@
   "description": "practising react",
   "main": "src/app.js",
   "scripts": {
-    "kill" : "fuser -k 30000/tcp",
+    "kill": "fuser -k 30000/tcp",
     "start": "npm run prod && npm run dist",
     "dev": "NODE_ENV=development babel-node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -rf dist/ ",
-    "copy": "cp src/index.html src/favicon.ico dist",
+    "clean": "rimraf dist/ ",
+    "copy": "copyfiles -f src/index.html src/favicon.ico dist",
     "prod": "npm run clean && webpack --config webpack.config.dist.js -p && npm run copy",
     "dist": "NODE_ENV=production babel-node server/server.js ",
     "deploy": "surge --project ./dist --domain diegoarcega-react.surge.sh"
@@ -33,8 +33,6 @@
   "dependencies": {
     "axios": "^0.12.0",
     "babel-polyfill": "^6.9.1",
-    "copy": "^0.2.3",
-    "crave_foods_test": "0.0.6",
     "firebase": "^3.0.5",
     "material-ui": "^0.15.1",
     "muicss": "^0.6.5",
@@ -59,6 +57,7 @@
     "babel-preset-react": "~6.5.0",
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-react-optimize": "^1.0.1",
+    "copyfiles": "^1.0.0",
     "css-loader": "^0.23.1",
     "express": "~4.13.4",
     "file-loader": "^0.8.5",
