@@ -38,7 +38,7 @@ if(process.env.NODE_ENV === 'production'){
 }
 
 /* Server */
-app.listen(3000, function() {
-  console.log('Listening port 3000')
+app.listen(process.env.PORT || 3000, function() {
+  console.log('Listening port ' + process.env.PORT || 3000)
   console.log('You are in ' + process.env.NODE_ENV + ' environment')
 })
