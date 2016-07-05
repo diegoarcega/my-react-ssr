@@ -4,12 +4,13 @@
   "description": "practising react",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.config.dev.js --inline --hot",
+    "kill" : "fuser -k 30000/tcp",
+    "dev": "NODE_ENV=development babel-node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf dist/ ",
     "copy": "cp src/index.html src/favicon.ico dist",
-    "prod": "webpack --config webpack.config.dist.js -p",
-    "dist": "npm run clean &&  npm run prod && npm run copy",
+    "prod": "npm run clean && webpack --config webpack.config.dist.js -p && npm run copy",
+    "dist": "NODE_ENV=production babel-node server/server.js ",
     "deploy": "surge --project ./dist --domain diegoarcega-react.surge.sh"
   },
   "repository": {

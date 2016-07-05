@@ -9,8 +9,6 @@ import '../node_modules/muicss/lib/css/mui.min.css'
 
 let store = configureStore()
 
-
-
 ReactDOM.render(
 	<Provider store={store}>
 		<Router history={browserHistory} routes={routes} />
