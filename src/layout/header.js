@@ -3,7 +3,7 @@ import Nav from './nav'
 
 let headerStyles = {
   width: '100%',
-  backgroundColor: '#008eff	'
+  backgroundColor: '#fff'
 }
 const Header = () => (
 	<div style={headerStyles}>

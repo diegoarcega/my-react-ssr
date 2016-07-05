@@ -29,6 +29,7 @@
     "babel-polyfill": "^6.9.1",
     "copy": "^0.2.3",
     "crave_foods_test": "0.0.6",
+    "express-history-api-fallback": "^2.0.0",
     "firebase": "^3.0.5",
     "material-ui": "^0.15.1",
     "muicss": "^0.6.5",
