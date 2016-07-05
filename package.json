@@ -2,9 +2,10 @@
   "name": "learning_react",
   "version": "0.0.0",
   "description": "practising react",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
     "kill" : "fuser -k 30000/tcp",
+    "start": "npm run prod && npm run dist",
     "dev": "NODE_ENV=development babel-node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf dist/ ",

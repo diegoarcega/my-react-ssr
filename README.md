@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-open localhost:8080
+open localhost:3000
 
 node
 v4.4.5
