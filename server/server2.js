@@ -1,5 +1,5 @@
-// var express = require('express');
-// var path = require('path');
+var express = require('express');
+var path = require('path');
 
 var app = express();
 
@@ -13,7 +13,6 @@ app.use('/assets/', express.static(DIST_DIR + '/assets'));
   });
 
 
-/* Server */
 app.listen(process.env.PORT || 3000, function() {
   console.log('Listening port ' + process.env.PORT || 3000)
   console.log('You are in ' + process.env.NODE_ENV + ' environment')
