@@ -1,7 +1,7 @@
-const path = require('path')
-const webpack = require('webpack')
+var path = require('path');
+var webpack = require('webpack');
 
-const SRC_DIR = path.resolve(__dirname + '/../src')
+var SRC_DIR = path.resolve(__dirname + '/../src');
 
 module.exports = {
     entry: [

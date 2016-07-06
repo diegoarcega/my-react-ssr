@@ -1,35 +1,34 @@
-
 var express = require('express');
 var path = require('path');
-//
-// var webpackDevMiddleware require('webpack-dev-middleware')
-// var webpackHotMiddleware require('webpack-hot-middleware')
-// var webpackDevConfigs require('./webpack.dev')
-// var webpack require('webpack')
-//
-// var compiler = webpack(webpackDevConfigs)
+
+var webpackDevMiddleware require('webpack-dev-middleware');
+var webpackHotMiddleware require('webpack-hot-middleware');
+var webpackDevConfigs require('./webpack.dev');
+var webpack require('webpack');
+
+var compiler = webpack(webpackDevConfigs);
 var app = express();
 
 var DIST_DIR = path.resolve(__dirname + '/../dist');
-// var SRC_DIR = path.resolve(__dirname + '/../src/')
+var SRC_DIR = path.resolve(__dirname + '/../src/');
 
 /* Development */
 /* It doesn't use the /dist folder's files, all the files sits in memory */
-// if(process.env.NODE_ENV === 'development'){
-//   app.use(webpackDevMiddleware(compiler,{
-//      stats: {colors: true},
-//      hot: true,
-//      historyApiFallback: true,
-//      publicPath: '/assets/'
-//   }))
-//   app.use(webpackHotMiddleware(compiler,{
-//     log: console.log,
-//     path: '/__webpack_hmr',
-//   }))
-//   app.get('*', function(req, res) {
-//     res.sendFile(SRC_DIR + '/index.html')
-//   })
-// }
+if(process.env.NODE_ENV === 'development'){
+  app.use(webpackDevMiddleware(compiler,{
+     stats: {colors: true},
+     hot: true,
+     historyApiFallback: true,
+     publicPath: '/assets/'
+  }));
+  app.use(webpackHotMiddleware(compiler,{
+    log: console.log,
+    path: '/__webpack_hmr',
+  }));
+  app.get('*', function(req, res) {
+    res.sendFile(SRC_DIR + '/index.html')
+  });
+}
 
 /* Production */
 // if(process.env.NODE_ENV === 'production'){
