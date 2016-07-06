@@ -1,3 +1,4 @@
+var cool = require('cool-ascii-faces');
 var express = require('express');
 var path = require('path');
 
@@ -10,8 +11,10 @@ app.set('port', (process.env.PORT || 5000));
 app.use('/assets/', express.static(DIST_DIR + '/assets'));
 
 app.get('/', function(req, res) {
-  // res.sendFile(DIST_DIR + '/index.html')
   res.send('hello');
+});
+app.get('/cool', function(request, response) {
+  response.send(cool());
 });
 
 
