@@ -48,7 +48,6 @@
     "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.10.1",
     "babel-core": "~6.9.1",
     "babel-loader": "~6.2.4",
     "babel-plugin-transform-es2015-function-name": "^6.9.0",
