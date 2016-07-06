@@ -2,7 +2,7 @@
   "name": "learning_react",
   "version": "0.0.1",
   "description": "practising react",
-  "main": "src/app.js",
+  "main": "server/server2.js",
   "scripts": {
     "kill": "fuser -k 30000/tcp",
     "start": "npm run serve",

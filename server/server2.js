@@ -4,7 +4,6 @@ var path = require('path');
 var app = express();
 
 var DIST_DIR = path.resolve(__dirname + '/../dist');
-var SRC_DIR = path.resolve(__dirname + '/../src/');
 
 
 app.use('/assets/', express.static(DIST_DIR + '/assets'));
@@ -13,7 +12,7 @@ app.use('/assets/', express.static(DIST_DIR + '/assets'));
   });
 
 
-app.listen(process.env.PORT || 3000, function() {
-  console.log('Listening port ' + process.env.PORT || 3000)
+app.listen(process.env.PORT, function() {
+  console.log('Listening port ' + process.env.PORT)
   console.log('You are in ' + process.env.NODE_ENV + ' environment')
 });
