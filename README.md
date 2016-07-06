@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-open localhost:3000
+open localhost:5000
 
 node
 v4.4.5

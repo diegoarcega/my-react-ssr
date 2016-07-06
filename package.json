@@ -4,14 +4,14 @@
   "description": "practising react",
   "main": "server/server.js",
   "scripts": {
-    "kill": "fuser -k 30000/tcp",
     "start": "npm run dist",
-    "dev": "NODE_ENV=development node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist/ ",
     "copy": "copyfiles -f src/index.html src/favicon.ico dist",
     "prod": "npm run clean && webpack --config webpack.config.dist.js -p && npm run copy",
-    "dist": "NODE_ENV=production node server/server.js ",
+    "dev": "NODE_ENV=development node server/server.js",
+    "dist": "NODE_ENV=production babel-node server/server.js ",
+    "kill": "fuser -k 30000/tcp",
     "deploy": "surge --project ./dist --domain diegoarcega-react.surge.sh"
   },
   "repository": {
@@ -19,7 +19,8 @@
     "url": "https://github.com/diegoarcega/learning_react"
   },
   "keywords": [
-    "REACT"
+    "react",
+    "redux"
   ],
   "engines": {
     "node": "4.4.5",
@@ -32,13 +33,12 @@
   },
   "dependencies": {
     "axios": "^0.12.0",
+    "babel-cli": "^6.10.1",
     "babel-polyfill": "^6.9.1",
-    "cool-ascii-faces": "^1.3.4",
     "express": "~4.13.4",
     "firebase": "^3.0.5",
     "material-ui": "^0.15.1",
     "muicss": "^0.6.5",
-    "q": "^1.4.1",
     "react": "~15.1.0",
     "react-dom": "~15.1.0",
     "react-redux": "~4.4.5",

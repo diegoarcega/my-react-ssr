@@ -1,11 +1,16 @@
-var express = require('express');
+import express from 'express';
 var path = require('path');
 var app = express();
 
 var DIST_DIR = path.resolve(__dirname + '/../dist');
+app.set('port', (process.env.PORT || 5000));
 
-/* Development */
-/* It doesn't use the /dist folder's files, all the files sits in memory */
+/*
+************************************************************************
+* Development
+* It doesn't use the /dist folder's files, all the files sits in memory
+************************************************************************
+*/
 if(process.env.NODE_ENV === 'development'){
   var webpackDevMiddleware = require('webpack-dev-middleware');
   var webpackHotMiddleware = require('webpack-hot-middleware');
@@ -32,16 +37,25 @@ if(process.env.NODE_ENV === 'development'){
   });
 }
 
-/* Production */
+/*
+************************************************************************
+* Production
+************************************************************************
+*/
 if(process.env.NODE_ENV === 'production'){
   app.use('/assets/', express.static(DIST_DIR + '/assets'));
+
   app.get('*', function(req, res) {
     res.sendFile(DIST_DIR + '/index.html');
   });
 }
 
-/* Server */
-app.listen(process.env.PORT || 5000, function() {
-  console.log('Listening port ' + process.env.PORT || 5000);
+/*
+************************************************************************
+* Server listens
+************************************************************************
+*/
+app.listen(app.get('port'), function() {
+  console.log('Listening port ' + app.get('port'));
   console.log('You are in ' + process.env.NODE_ENV + ' environment');
 });
