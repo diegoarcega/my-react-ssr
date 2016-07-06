@@ -12,7 +12,7 @@
     "clean": "rimraf dist/ ",
     "copy": "copyfiles -f src/index.html src/favicon.ico dist",
     "prod": "npm run clean && webpack --config webpack.config.dist.js -p && npm run copy",
-    "dist": "NODE_ENV=production babel-node server/server.js ",
+    "dist": "NODE_ENV=production node server/server.js ",
     "deploy": "surge --project ./dist --domain diegoarcega-react.surge.sh"
   },
   "repository": {
