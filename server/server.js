@@ -1,15 +1,17 @@
-import express from 'express'
-import path from 'path'
-import webpackDevMiddleware from 'webpack-dev-middleware'
-import webpackHotMiddleware from 'webpack-hot-middleware'
-import webpackDevConfigs from './webpack.dev'
-import webpack from 'webpack'
+var cool = require('cool-ascii-faces');
+var express = require('express');
+var path = require('path');
 
-const compiler = webpack(webpackDevConfigs)
-const app = express()
+var webpackDevMiddleware require('webpack-dev-middleware')
+var webpackHotMiddleware require('webpack-hot-middleware')
+var webpackDevConfigs require('./webpack.dev')
+var webpack require('webpack')
 
-const DIST_DIR = path.resolve(__dirname + '/../dist')
-const SRC_DIR = path.resolve(__dirname + '/../src/')
+var compiler = webpack(webpackDevConfigs)
+var app = express()
+
+var DIST_DIR = path.resolve(__dirname + '/../dist')
+var SRC_DIR = path.resolve(__dirname + '/../src/')
 
 /* Development */
 /* It doesn't use the /dist folder's files, all the files sits in memory */
@@ -38,7 +40,7 @@ if(process.env.NODE_ENV === 'production'){
 }
 
 /* Server */
-app.listen(process.env.PORT || 3000, function() {
-  console.log('Listening port ' + process.env.PORT || 3000)
+app.listen(process.env.PORT || 5000, function() {
+  console.log('Listening port ' + process.env.PORT || 5000)
   console.log('You are in ' + process.env.NODE_ENV + ' environment')
 })
