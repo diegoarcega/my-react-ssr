@@ -1,16 +1,16 @@
-const express = require('express')
-const path = require('path')
-const webpackDevMiddleware = require('webpack-dev-middleware')
-const webpackHotMiddleware = require('webpack-hot-middleware')
-const webpack = require('webpack')
-const webpackDevConfigs = require('./webpack.dev')
+var express = require('express')
+var path = require('path')
+var webpackDevMiddleware = require('webpack-dev-middleware')
+var webpackHotMiddleware = require('webpack-hot-middleware')
+var webpack = require('webpack')
+var webpackDevConfigs = require('./webpack.dev')
 
 
-const compiler = webpack(webpackDevConfigs)
-const app = express()
+var compiler = webpack(webpackDevConfigs)
+var app = express()
 
-const DIST_DIR = path.resolve(__dirname + '/../dist')
-const SRC_DIR = path.resolve(__dirname + '/../src/')
+var DIST_DIR = path.resolve(__dirname + '/../dist')
+var SRC_DIR = path.resolve(__dirname + '/../src/')
 
 /* Development */
 /* It doesn't use the /dist folder's files, all the files sits in memory */
