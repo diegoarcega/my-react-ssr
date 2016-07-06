@@ -1,10 +1,10 @@
 var express = require('express');
 var path = require('path');
 
-var webpackDevMiddleware require('webpack-dev-middleware');
-var webpackHotMiddleware require('webpack-hot-middleware');
-var webpackDevConfigs require('./webpack.dev');
-var webpack require('webpack');
+var webpackDevMiddleware = require('webpack-dev-middleware');
+var webpackHotMiddleware = require('webpack-hot-middleware');
+var webpackDevConfigs = require('./webpack.dev');
+var webpack = require('webpack');
 
 var compiler = webpack(webpackDevConfigs);
 var app = express();
