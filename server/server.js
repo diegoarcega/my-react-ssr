@@ -26,7 +26,7 @@ if(process.env.NODE_ENV === 'development'){
     path: '/__webpack_hmr',
   }));
   app.get('*', function(req, res) {
-    res.sendFile(SRC_DIR + '/index.html')
+    res.sendFile(SRC_DIR + '/index.html');
   });
 }
 
