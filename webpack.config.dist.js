@@ -4,10 +4,13 @@ var webpack = require('webpack');
 var SRC_DIR = path.resolve(__dirname, 'src');
 
 var CONFIG = {
-    entry: SRC_DIR + '/app.js',
+    entry: {
+      app: SRC_DIR + '/app.js',
+      shell: SRC_DIR + '/shell.js'
+    },
     output: {
         path: path.resolve(__dirname, 'dist/assets'),
-        filename: 'bundle.js',
+        filename: '[name].js',
         publicPath: '/assets/'
     },
     resolve: {
