@@ -10,7 +10,7 @@
     "copy": "copyfiles -f src/index.html src/favicon.ico dist",
     "prod": "npm run clean && webpack --config webpack.config.dist.js -p && npm run copy",
     "dev": "NODE_ENV=development babel-node server/server.js",
-    "dist": "NODE_ENV=production node  server/server.js ",
+    "dist": "NODE_ENV=development babel-node  server/server.js ",
     "kill": "fuser -k 30000/tcp",
     "deploy": "surge --project ./dist --domain diegoarcega-react.surge.sh"
   },
@@ -37,6 +37,7 @@
     "babel-polyfill": "^6.9.1",
     "express": "~4.13.4",
     "firebase": "^3.0.5",
+    "history": "^3.0.0",
     "material-ui": "^0.15.1",
     "muicss": "^0.6.5",
     "react": "~15.1.0",
