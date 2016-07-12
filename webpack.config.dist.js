@@ -5,7 +5,8 @@ var SRC_DIR = path.resolve(__dirname, 'src');
 
 var CONFIG = {
     entry: {
-      app: SRC_DIR + '/client/app.js',
+      // app: SRC_DIR + '/client/app.js',
+      shell: SRC_DIR + '/server/index.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist/assets'),
@@ -21,7 +22,7 @@ var CONFIG = {
     },
     module: {
           loaders: [
-              { test: /\.js$/, include: path.join(__dirname, 'src'), loader: 'babel-loader' },
+              { test: /\.js$/, include: SRC_DIR, loader: 'babel-loader' },
               // { test: /\.(css|scss)$/, loaders: ['style', 'css?modules&importLoaders=1&localIdentName=[local]_[hash:base64:5]', 'sass'] },
               { test: /\.css$/, loader: "style-loader!css-loader" },
               { test: /\.jpg(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },

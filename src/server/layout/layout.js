@@ -19,4 +19,4 @@ const Layout = ({children}) => (
   </MuiThemeProvider>
 )
 
-module.exports =  Layout;
+export default Layout
