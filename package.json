@@ -2,15 +2,15 @@
   "name": "learning_react",
   "version": "0.0.1",
   "description": "practising react",
-  "main": "server/server.js",
+  "main": "index.js",
   "scripts": {
     "start": "npm run dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist/ ",
     "copy": "copyfiles -f src/index.html src/favicon.ico dist",
     "prod": "npm run clean && webpack --config webpack.config.dist.js -p && npm run copy",
-    "dev": "NODE_ENV=development babel-node server/server.js",
-    "dist": "NODE_ENV=development babel-node  server/server.js ",
+    "dev": "NODE_ENV=development babel-node index.js",
+    "dist": "NODE_ENV=development babel-node  index.js ",
     "kill": "fuser -k 30000/tcp",
     "deploy": "surge --project ./dist --domain diegoarcega-react.surge.sh"
   },
