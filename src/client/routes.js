@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route, Router, browserHistory, IndexRedirect, IndexRoute} from 'react-router'
+import {Route, Router, IndexRedirect, IndexRoute} from 'react-router'
 
 import Layout from '../server/layout/layout'
 import HomeScreen from './screens/Home/home'

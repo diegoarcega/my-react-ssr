@@ -3,8 +3,7 @@ import path from 'path'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { Router, Route, match, RouterContext } from 'react-router'
-import routes from '../src/server/routes'
-import rootComponent from '../src/shared/rootComponent'
+import routes from '../src/client/routes'
 
 const app = express()
 
@@ -15,7 +14,8 @@ app.use('/assets/', express.static(DIST_DIR + '/assets'))
 app.get('*', function(req, res) {
   match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
     const body = renderToString(<RouterContext {...renderProps} />)
-    res.send(`<!DOCTYPE html>
+    res.send(`
+      <!DOCTYPE html>
           <html>
             <head>
               <link href="//cdn.muicss.com/mui-0.6.5/css/mui.min.css" rel="stylesheet" type="text/css" />
@@ -24,7 +24,8 @@ app.get('*', function(req, res) {
               <div id="root">${body}</div>
               <script defer src="assets/app.js"></script>
             </body>
-          </html>`)
+          </html>
+          `)
   })
 })
 
