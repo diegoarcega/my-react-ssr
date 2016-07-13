@@ -33,16 +33,16 @@ var CONFIG = {
     plugins: [
       new webpack.optimize.DedupePlugin(),
       new webpack.optimize.OccurenceOrderPlugin(),
-    //   new webpack.DefinePlugin({
-    //     'process.env': {
-    //       'NODE_ENV': JSON.stringify('production')
-    //     }
-    //   }),
-    //   new webpack.optimize.UglifyJsPlugin({
-    //     compress: {
-    //       warnings: false
-    //     }
-    //   })
+      new webpack.DefinePlugin({
+        'process.env': {
+          'NODE_ENV': JSON.stringify('production')
+        }
+      }),
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false
+        }
+      })
     ],
     devtool: 'source-map'
 }
