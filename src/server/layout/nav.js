@@ -14,8 +14,10 @@ let anchorStyles = {
 class Nav extends Component {
 
   constructor(props) {
-    super(props);
-    this.state = {open: false};
+    super(props)
+    this.state = {open: false}
+    this.handleToggle = this.handleToggle.bind(this)
+    this.handleClose = this.handleClose.bind(this)
   }
 
   handleToggle(){
@@ -29,7 +31,7 @@ class Nav extends Component {
   render(){
 
     const closeButton = () => (
-      <IconButton onClick={this.handleToggle.bind(this)}>
+      <IconButton onClick={this.handleToggle}>
           <NavigationClose />
       </IconButton>
     )
@@ -47,7 +49,7 @@ class Nav extends Component {
         </Drawer>
         <AppBar
           title="AppName"
-          onLeftIconButtonTouchTap={this.handleToggle.bind(this)}
+          onLeftIconButtonTouchTap={this.handleToggle}
         />
         <div className="mui-container">
           <div className="mui-row">

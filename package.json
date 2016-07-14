@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist/ ",
     "copy": "copyfiles -f src/index.html src/favicon.ico dist",
-    "prod": "npm run clean && webpack --config webpack.config.dist.js -p && npm run copy",
+    "prod": "npm run clean && webpack --config webpack.config.dist.js && npm run copy",
     "dev": "NODE_ENV=development babel-node index.js",
     "dist": "NODE_ENV=production node index.js ",
     "kill": "fuser -k 30000/tcp",
