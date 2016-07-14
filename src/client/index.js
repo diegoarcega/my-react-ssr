@@ -2,15 +2,17 @@ import 'babel-polyfill'
 
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, hashHistory, browserHistory, match } from 'react-router'
+import { Router, browserHistory } from 'react-router'
+// import createHistory from 'history/lib/createBrowserHistory'
+// import createHistory from 'history/lib/createHashHistory'
 
 import routes from './routes'
 
-let history = browserHistory
+// let history = createHistory()
 
 //client side, will become app.js
-match({ routes, location, history }, (error, redirectLocation, renderProps) => {
-  render(<Router {...renderProps} />, document.getElementById('root'))
-})
+// match({ routes, location, history }, (error, redirectLocation, renderProps) => {
+//   render(<Router {...renderProps} />, document.getElementById('root'))
+// })
 
-// render(<Router history={browserHistory} routes={routes}/>, document.getElementById('root'))
+render(<Router history={browserHistory} routes={routes}/>, document.getElementById('root'))

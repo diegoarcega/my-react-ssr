@@ -22,7 +22,7 @@ app.get('*', function(req, res) {
             </head>
             <body>
               <div id="root">${body}</div>
-              <script defer src="assets/app.js"></script>
+              <script src="assets/app.js"></script>
             </body>
           </html>
           `)
