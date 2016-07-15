@@ -9,7 +9,7 @@ app.use('/assets/', express.static(DIST_DIR + '/assets'))
 
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname + '/index.html'))
+  res.sendFile(DIST_DIR '/index.html')
 })
 
 app.set('port', (process.env.PORT || 5000))

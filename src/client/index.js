@@ -3,8 +3,6 @@ import 'babel-polyfill'
 import React from 'react'
 import { render } from 'react-dom'
 import { Router, browserHistory } from 'react-router'
-// import createHistory from 'history/lib/createBrowserHistory'
-// import createHistory from 'history/lib/createHashHistory'
 
 import routes from './routes'
 

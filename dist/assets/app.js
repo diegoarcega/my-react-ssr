@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e171a05020dbdb0c479f"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "32fff7ab477610e48793"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -609,8 +609,6 @@
 	// })
 	
 	(0, _reactDom.render)(_react2.default.createElement(_reactRouter.Router, { history: _reactRouter.browserHistory, routes: _routes2.default }), document.getElementById('root'));
-	// import createHistory from 'history/lib/createBrowserHistory'
-	// import createHistory from 'history/lib/createHashHistory'
 
 /***/ },
 /* 1 */
@@ -55479,7 +55477,7 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	   value: true
 	});
 	
 	var _react = __webpack_require__(2);
@@ -55502,19 +55500,15 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// import TodoScreen from './screens/Todo/Todo'
-	
 	//shared routes, renderToString and app.js
 	var routes = _react2.default.createElement(
-	  _reactRouter.Route,
-	  { path: '/', component: _layout2.default },
-	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _home2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: 'login', component: _Login2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: 'home', component: _home2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: '*', component: _home2.default })
-	)
-	// </Router>
-	;
+	   _reactRouter.Route,
+	   { path: '/', component: _layout2.default },
+	   _react2.default.createElement(_reactRouter.IndexRoute, { component: _home2.default }),
+	   _react2.default.createElement(_reactRouter.Route, { path: 'login', component: _Login2.default }),
+	   _react2.default.createElement(_reactRouter.Route, { path: 'home', component: _home2.default }),
+	   _react2.default.createElement(_reactRouter.Route, { path: '*', component: _home2.default })
+	);
 	
 	exports.default = routes;
 
