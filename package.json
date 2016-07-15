@@ -58,7 +58,7 @@
     "babel-core": "~6.9.1",
     "babel-loader": "~6.2.4",
     "react-tap-event-plugin": "^1.0.0",
-    "react-thunk": "^1.0.0",
+    "react-thunk": "^1.0.0"
   },
   "devDependencies": {
     "copyfiles": "^1.0.0",
