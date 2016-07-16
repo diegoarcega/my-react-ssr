@@ -24,7 +24,7 @@ class Login extends React.Component{
                 </div>
                 <div className="mui-row">
                     <div className="mui-col-xs-12">
-                        <RaisedButton label="Login" fullWidth={true} primary={true} />
+                        <RaisedButton label="Login" primary={true} />
                     </div>
                 </div>
             </div>
