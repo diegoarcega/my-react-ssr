@@ -7,7 +7,8 @@ This repository was created so I could practice ReactJS/Redux/NodeJS from scratc
 * material-ui
 * Redux(WIP)
 * [Universal - serverside rendering branch](https://github.com/diegoarcega/learning_react/tree/serverside-render)
-* MongoDB
+* MongoDB(todo)
+* HMR
 
 #### run
 1. npm run install
