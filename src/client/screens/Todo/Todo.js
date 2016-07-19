@@ -18,21 +18,29 @@ class Todo extends Component{
 	  })
 	}
 
-  shouldComponentUpdate(nextProps, nextState){
-    return this.state.listRequest.todos !== nextProps.todos
-  }
-
-	componentWillUpdate(nextProps, nextState) {
-		this.state.listRequest.todos = nextProps.todos.reverse()
-		this.state.listRequest.loaded = true
+	componentDidMount(){
+		this.setState({
+			listRequest: {
+				todos: this.props.todos.todos,
+				loaded: true
+			}
+		})
 	}
+  // shouldComponentUpdate(nextProps, nextState){
+  //   return this.state.listRequest.todos !== nextProps.todos
+  // }
+
+	// componentWillMount(nextProps, nextState) {
+	// 	this.state.listRequest.todos = nextProps.todos.reverse()
+	// 	this.state.listRequest.loaded = true
+	// }
 
 	render(){
 		return(
 			<div className="mui-row">
 				<div className="mui-col-xs-12">
 					<p></p>
-          <p className="mui--text-dark-secondary">This is a Firebase todo list</p>
+          <p className="mui--text-dark-secondary">This is a mongodb todo list</p>
 					<TodoAdd addTodo={this.props.actions.add} />
 					<p></p>
 					<TodoList

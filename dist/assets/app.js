@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "5dbddcdc1c9a7e16ba82"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "371c5e4ef0a0a24b5950"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -23170,10 +23170,9 @@
 	
 	
 	var actions = {
-		fetchAllTodo: function fetchAllTodo(todos) {
+		fetchAllTodo: function fetchAllTodo() {
 			return {
-				type: 'FETCH_ALL_TODOS',
-				todos: todos
+				type: 'FETCH_ALL_TODOS'
 			};
 		},
 		markDone: function markDone(todo) {
@@ -23191,6 +23190,7 @@
 		},
 		initTodos: function initTodos() {
 			return function (dispatch, getState) {
+				dispatch(actions.fetchAllTodo());
 				// ref.database().ref('todos').limitToLast(25).on('value',function (snapshot) {
 				// 		let items = []
 				//
@@ -23203,7 +23203,6 @@
 				// 	  // whenever you push anything to the array, it trigger all other fetch event to update the data across the app
 				// 		dispatch(actions.fetchAllTodo(items))
 				// })
-	
 			};
 		},
 		add: function add(text) {
@@ -23291,25 +23290,22 @@
 		value: true
 	});
 	exports.default = todoReducer;
-	var initialData = {
+	var initialData = [{
 		id: 1,
 		text: 'first initial state',
 		completed: false
-	};
+	}];
 	
 	var initialState = {};
-	
 	typeof window === 'undefined' ? initialState = initialData : initialState = window.__REDUX_STATE__;
 	
 	function todoReducer() {
 		var todos = arguments.length <= 0 || arguments[0] === undefined ? initialState : arguments[0];
 		var action = arguments[1];
 	
-		console.log(todos);
-		console.log(action);
 		switch (action.type) {
 			case 'FETCH_ALL_TODOS':
-				return action.todos;
+				return todos;
 	
 			default:
 				return todos;
@@ -23731,16 +23727,24 @@
 				});
 			}
 		}, {
-			key: 'shouldComponentUpdate',
-			value: function shouldComponentUpdate(nextProps, nextState) {
-				return this.state.listRequest.todos !== nextProps.todos;
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				this.setState({
+					listRequest: {
+						todos: this.props.todos.todos,
+						loaded: true
+					}
+				});
 			}
-		}, {
-			key: 'componentWillUpdate',
-			value: function componentWillUpdate(nextProps, nextState) {
-				this.state.listRequest.todos = nextProps.todos.reverse();
-				this.state.listRequest.loaded = true;
-			}
+			// shouldComponentUpdate(nextProps, nextState){
+			//   return this.state.listRequest.todos !== nextProps.todos
+			// }
+	
+			// componentWillMount(nextProps, nextState) {
+			// 	this.state.listRequest.todos = nextProps.todos.reverse()
+			// 	this.state.listRequest.loaded = true
+			// }
+	
 		}, {
 			key: 'render',
 			value: function render() {
@@ -23754,7 +23758,7 @@
 						_react2.default.createElement(
 							'p',
 							{ className: 'mui--text-dark-secondary' },
-							'This is a Firebase todo list'
+							'This is a mongodb todo list'
 						),
 						_react2.default.createElement(_add2.default, { addTodo: this.props.actions.add }),
 						_react2.default.createElement('p', null),

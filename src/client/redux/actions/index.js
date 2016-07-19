@@ -2,10 +2,9 @@
 
 let actions = {
 
-	fetchAllTodo(todos){
+	fetchAllTodo(){
 		return {
 			type: 'FETCH_ALL_TODOS',
-			todos: todos,
 		}
 	},
 
@@ -26,6 +25,7 @@ let actions = {
 
 	initTodos(){
 		return (dispatch, getState) => {
+      dispatch(actions.fetchAllTodo())
 			// ref.database().ref('todos').limitToLast(25).on('value',function (snapshot) {
 			// 		let items = []
 			//
