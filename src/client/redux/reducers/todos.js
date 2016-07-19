@@ -12,6 +12,10 @@ export default function todoReducer(todos = initialState, action) {
 		case 'FETCH_ALL_TODOS':
 			return todos
 
+		case 'DELETE_TODO':
+			console.log(action)
+			return todos
+
 		default:
 			return todos
 	}

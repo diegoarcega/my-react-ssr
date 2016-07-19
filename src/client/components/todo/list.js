@@ -40,7 +40,7 @@ export default class TodoList extends Component{
 				</IconButton>
 				<IconButton
 					touch={true}
-					onClick={this.onDelete.bind(this, item['.key'])}
+					onClick={this.onDelete.bind(this, item['id'])}
 				>
 					<ActionDelete color={'silver'} />
 				</IconButton>

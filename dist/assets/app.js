@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "371c5e4ef0a0a24b5950"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "aa565147edb44b94ee65"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -23109,7 +23109,7 @@
 							_IconButton2.default,
 							{
 								touch: true,
-								onClick: _this2.onDelete.bind(_this2, item['.key'])
+								onClick: _this2.onDelete.bind(_this2, item['id'])
 							},
 							_react2.default.createElement(_delete2.default, { color: 'silver' })
 						)
@@ -23183,9 +23183,10 @@
 				// })
 			};
 		},
-		removeTodo: function removeTodo(key) {
-			return function () {
-				// ref.database().ref('todos/' + key).remove()
+		removeTodo: function removeTodo(id) {
+			return {
+				type: 'DELETE_TODO',
+				id: id
 			};
 		},
 		initTodos: function initTodos() {
@@ -23305,6 +23306,10 @@
 	
 		switch (action.type) {
 			case 'FETCH_ALL_TODOS':
+				return todos;
+	
+			case 'DELETE_TODO':
+				console.log(action);
 				return todos;
 	
 			default:

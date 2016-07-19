@@ -17,9 +17,10 @@ let actions = {
 		}
 	},
 
-	removeTodo(key){
-		return () => {
-			// ref.database().ref('todos/' + key).remove()
+	removeTodo(id){
+		return {
+			type: 'DELETE_TODO',
+			id
 		}
 	},
 
