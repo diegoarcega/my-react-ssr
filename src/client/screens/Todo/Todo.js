@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 
 import TodoList from '../../components/todo/list'
 import TodoAdd from '../../components/todo/add'
-// import actions from '../../../client/redux/actions'
+import actions from '../../redux/actions'
 
 
 class Todo extends Component{

@@ -3,28 +3,36 @@ import path from 'path'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { Router, Route, match, RouterContext } from 'react-router'
+import { Provider } from 'react-redux'
+import configureStore from '../src/client/redux/configureStore'
 import routes from '../src/client/routes'
-
-// const express = require('express')
-// const path = require('path')
-// const React = require('react')
-// const renderToString = require('react-dom/server').renderToString
-// const Router = require('react-router').Router
-// const Route = require('react-router').Route
-// const RouterContext = require('react-router').RouterContext
-// const match = require('react-router').match
-// const routes = require('../src/client/routes')
-
-
-const app = express()
+import app from './middleware'
+import authAPI from './api/auth'
+import todosAPI from './api/todos'
+import postsAPI from './api/posts'
 
 const DIST_DIR = path.resolve(__dirname + '/../dist')
 
+// apis
+app.use('/api/auth', authAPI)
+app.use('/api/todos', todosAPI)
+app.use('/api/posts', postsAPI)
+
+// assets
 app.use('/assets/', express.static(DIST_DIR + '/assets'))
 
+// server side rendering
 app.get('*', function(req, res) {
   match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
-    const body = renderToString(<RouterContext {...renderProps} />)
+    let store = configureStore()
+    let state = store.getState()
+
+    const body = renderToString(
+      <Provider store={store}>
+        <RouterContext {...renderProps} />
+      </Provider>
+    )
+
     res.send(`
       <!DOCTYPE html>
           <html>
@@ -33,6 +41,9 @@ app.get('*', function(req, res) {
             </head>
             <body>
               <div id="root">${body}</div>
+              <script>
+                window.__REDUX_STATE__= ${JSON.stringify(state)}
+              </script>
               <script src="assets/app.js"></script>
             </body>
           </html>
@@ -41,7 +52,6 @@ app.get('*', function(req, res) {
 })
 
 app.set('port', (process.env.PORT || 5000))
-
 app.listen(app.get('port'), function() {
   console.log('Listening port ' + app.get('port'));
   console.log('You are in ' + process.env.NODE_ENV + ' environment');

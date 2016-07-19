@@ -3,11 +3,13 @@ import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'mat
 import FlatButton from 'material-ui/FlatButton'
 
 
+
 class Home extends React.Component{
 	render(){
     let cardStyles = {
         width: '25%'
     }
+
 		return(
 			<div>
         <h1>Postagens</h1>

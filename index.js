@@ -9,4 +9,4 @@ require("babel-core").transform("code", {
 })
 
 
-import './bin/server.universal'
+import './server/index.universal'
