@@ -1,4 +1,4 @@
-#React/Redux
+#React/Redux [demo](http://diegoserverside.heroku.com)
 
 This repository was created so I could practice ReactJS/Redux/NodeJS from scratch and receive feedback on what I can do better while coding with react.
 
