@@ -1,22 +1,39 @@
 import React, { Component } from 'react'
 import CircularProgress from 'material-ui/CircularProgress'
 import {List, ListItem} from 'material-ui/List'
-import Divider from 'material-ui/Divider'
 import ActionDelete from 'material-ui/svg-icons/action/delete'
 import ActionDone from 'material-ui/svg-icons/action/done'
 import ContentUndo from 'material-ui/svg-icons/content/undo'
 import IconButton from 'material-ui/IconButton'
 
 export default class TodoList extends Component{
-	onMarkDone(_item){
-		this.props.markDone(_item)
+
+	componentWillMount(){
+		this.setState({
+			list: this.props.list
+		})
 	}
 
-	onDelete(key){
-		this.props.remove(key)
+	shouldComponentUpdate(nextProps){
+		return this.state.list.todos !== nextProps.todos
+	}
+
+	componentWillReceiveProps(nextProps){
+		this.setState({
+			list: nextProps.list
+		})
+	}
+
+	onToggle(id){
+		this.props.toggle(id)
+	}
+
+	onDelete(id){
+		this.props.delete(id)
 	}
 
 	render(){
+
 		let textStyles = {
 			read: {
 				textDecoration: 'line-through',
@@ -34,38 +51,38 @@ export default class TodoList extends Component{
 			<div>
 				<IconButton
 					touch={true}
-					onClick={this.onMarkDone.bind(this, item)}
+					onClick={this.onToggle.bind(this, item.id)}
 				>
 					{item.completed ? <ContentUndo color={'silver'} /> : <ActionDone color={'silver'} /> }
 				</IconButton>
 				<IconButton
 					touch={true}
-					onClick={this.onDelete.bind(this, item['id'])}
+					onClick={this.onDelete.bind(this, item.id)}
 				>
 					<ActionDelete color={'silver'} />
 				</IconButton>
 			</div>
 		)
 
-		const todoText = item => (
-			<span style={item.completed ? textStyles.read : textStyles.notread }>
-				{item.text}
-			</span>
-		)
+		// const todoText = item => (
+		// 	<span style={item.completed ? textStyles.read : textStyles.notread }>
+		// 		{item.text} - {item.id}
+		// 	</span>
+		// )
 
 		return(
 				<div>
 					<div className="mui--text-center">
-						{!this.props.list.loaded ? <CircularProgress size={0.5}/> : ''}
-						{!this.props.list.todos.length && this.props.list.loaded ? <p className="mui--text-dark-hint">The list is empty, add some items ;)</p> : ''}
+						{!this.state.list.loaded ? <CircularProgress size={0.5}/> : ''}
+						{!this.state.list.todos.length && this.state.list.loaded ? <p className="mui--text-dark-hint">The list is empty, add some items ;)</p> : ''}
 	  			</div>
 
 					<List>
-     				{ this.props.list.loaded ? this.props.list.todos.map((item, index) =>(
+     				{ this.state.list.loaded ? this.state.list.todos.map((item, index) =>(
 							<ListItem
 								disabled={true}
 								key={index}
-			          primaryText={todoText(item)}
+			          primaryText={item.text}
 								style={listStyles}
 								rightIconButton={todoControls(item)}
 			        />

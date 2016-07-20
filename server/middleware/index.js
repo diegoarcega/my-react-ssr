@@ -2,8 +2,27 @@ import bodyParser from 'body-parser'
 import express from 'express'
 import winston from 'winston'
 import expressWinston from 'express-winston'
-
 const app = express()
+
+/*webpack dev*/
+var webpackDevMiddleware = require('webpack-dev-middleware');
+var webpackHotMiddleware = require('webpack-hot-middleware');
+var webpackDevConfigs = require('../webpack.dev');
+var webpack = require('webpack');
+var compiler = webpack(webpackDevConfigs);
+
+app.use(webpackDevMiddleware(compiler,{
+   stats: {colors: true},
+   hot: true,
+   historyApiFallback: true,
+   publicPath: '/assets/'
+}));
+
+app.use(webpackHotMiddleware(compiler,{
+  log: console.log,
+  path: '/__webpack_hmr',
+}));
+/*webpack dev*/
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))

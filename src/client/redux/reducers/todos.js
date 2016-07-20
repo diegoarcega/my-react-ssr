@@ -1,31 +1,33 @@
 let initialData = [{
   id: 1,
   text: 'first initial state',
-	completed: false
+	completed: true
 }]
 
 let initialState = {}
 typeof window === 'undefined' ?  initialState = initialData : initialState = window.__REDUX_STATE__.todos
-// typeof window !== 'undefined' ?  console.log(window.__REDUX_STATE__) : ''
 
 export default function todosReducer(todos = initialState, action) {
+	console.log(action)
 	switch(action.type){
 		case 'FETCH_ALL_TODOS':
 			return todos
 
 		case 'ADD_TODO':
-      let newTodos = [...todos, {
-        id: 2,
+			return [...todos, {
+        id: todos.length,
         text: action.text,
         completed: false
       }]
-			return newTodos
 
 		case 'DELETE_TODO':
-			return todos
+			return todos.filter(t => t.id !== action.id)
 
-    case 'MARKDONE_TODO':
-			return todos
+    case 'TOGGLE_TODO':
+			return todos.map(t => {
+					if(t.id === action.id) return Object.assign({}, t, {completed: !t.completed})
+					else return t
+			})
 
 		default:
 			return todos

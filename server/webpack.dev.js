@@ -1,18 +1,16 @@
 var path = require('path');
 var webpack = require('webpack');
 
-var SRC_DIR = path.resolve(__dirname + '/../src');
+var SRC_DIR = path.resolve(__dirname + '/../src/');
 
 module.exports = {
     entry: [
         'webpack-hot-middleware/client?reload=true',
-        SRC_DIR + '/app.js',
-        SRC_DIR + '/shell.js',
-
+        SRC_DIR + '/client/index.js',
     ],
     output: {
         path: "/",
-        filename: '[name].js',
+        filename: 'app.js',
         publicPath: '/assets/'
     },
     resolve: {

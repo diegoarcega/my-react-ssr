@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import TodoList from '../../components/todo/list'
+import TodoList from './components/TodoList'
 import TodoAdd from '../../components/todo/add'
 import actions from '../../redux/actions'
 
@@ -45,9 +45,9 @@ class Todo extends Component{
 					<TodoAdd addTodo={this.props.actions.add} />
 					<p></p>
 					<TodoList
-						remove={this.props.actions.removeTodo}
-						markDone={this.props.actions.markDone}
-						list={this.state.listRequest}
+						toggleItem={this.props.actions.toggleItem}
+						deleteItem={this.props.actions.deleteItem}
+						todos={this.state.listRequest.todos}
 						/>
 				</div>
 			</div>
