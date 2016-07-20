@@ -4,7 +4,7 @@ import winston from 'winston'
 import expressWinston from 'express-winston'
 const app = express()
 
-if(process.ENV == 'development'){
+if(process.env.NODE_ENV == 'development'){
   /*webpack dev*/
   var webpackDevMiddleware = require('webpack-dev-middleware');
   var webpackHotMiddleware = require('webpack-hot-middleware');

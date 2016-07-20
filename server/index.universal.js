@@ -44,7 +44,7 @@ app.get('*', function(req, res) {
               <script>
                 window.__REDUX_STATE__= ${JSON.stringify(state)}
               </script>
-              <script src="assets/app.js"></script>
+              <script src="/assets/app.js"></script>
             </body>
           </html>
           `)

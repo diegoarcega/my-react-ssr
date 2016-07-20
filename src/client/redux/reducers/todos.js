@@ -1,7 +1,7 @@
 let initialData = [{
   id: 1,
-  text: 'first initial state',
-	completed: true
+  text: 'initial state, first task',
+	completed: false
 }]
 
 let initialState = {}
@@ -15,7 +15,7 @@ export default function todosReducer(todos = initialState, action) {
 
 		case 'ADD_TODO':
 			return [...todos, {
-        id: todos.length,
+        id: todos.length + 1,
         text: action.text,
         completed: false
       }]
