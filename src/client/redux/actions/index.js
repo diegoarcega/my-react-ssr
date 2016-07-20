@@ -1,10 +1,8 @@
-
-
 let actions = {
 
 	fetchAllTodo(){
 		return {
-			type: 'FETCH_ALL_TODOS',
+			type: 'FETCH_ALL_TODOS'
 		}
 	},
 
@@ -44,14 +42,18 @@ let actions = {
 	},
 
 	add(text){
-		return (dispatch, getState) => {
-			// let newTodo = { text: text, completed: false }
-			// ref.database().ref('todos').push(newTodo).then(function () {
-			// 	// this will trigger all the promises inside the ref.database().ref('todos')
-			// 	// whenever you push anything to the array, it trigger all other fetch event to update the data across the app
-			// })
-
+		return {
+			type: 'ADD_TODO',
+			text : text
 		}
+		// return (dispatch, getState) => {
+		// let newTodo = { text: text, completed: false }
+		// ref.database().ref('todos').push(newTodo).then(function () {
+		// 	// this will trigger all the promises inside the ref.database().ref('todos')
+		// 	// whenever you push anything to the array, it trigger all other fetch event to update the data across the app
+		// })
+
+		// }
 	}
 }
 

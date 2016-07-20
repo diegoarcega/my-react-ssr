@@ -5,15 +5,26 @@ let initialData = [{
 }]
 
 let initialState = {}
-typeof window === 'undefined' ?  initialState = initialData : initialState = window.__REDUX_STATE__
+typeof window === 'undefined' ?  initialState = initialData : initialState = window.__REDUX_STATE__.todos
+// typeof window !== 'undefined' ?  console.log(window.__REDUX_STATE__) : ''
 
-export default function todoReducer(todos = initialState, action) {
+export default function todosReducer(todos = initialState, action) {
 	switch(action.type){
 		case 'FETCH_ALL_TODOS':
 			return todos
 
+		case 'ADD_TODO':
+      let newTodos = [...todos, {
+        id: 2,
+        text: action.text,
+        completed: false
+      }]
+			return newTodos
+
 		case 'DELETE_TODO':
-			console.log(action)
+			return todos
+
+    case 'MARKDONE_TODO':
 			return todos
 
 		default:

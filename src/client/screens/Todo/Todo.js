@@ -21,19 +21,20 @@ class Todo extends Component{
 	componentDidMount(){
 		this.setState({
 			listRequest: {
-				todos: this.props.todos.todos,
+				todos: this.props.todos,
 				loaded: true
 			}
 		})
 	}
-  // shouldComponentUpdate(nextProps, nextState){
-  //   return this.state.listRequest.todos !== nextProps.todos
-  // }
 
-	// componentWillMount(nextProps, nextState) {
-	// 	this.state.listRequest.todos = nextProps.todos.reverse()
-	// 	this.state.listRequest.loaded = true
-	// }
+	componentWillReceiveProps(nextProps) {
+		this.setState({
+			listRequest: {
+				todos: nextProps.todos,
+				loaded: true
+			}
+		})
+	}
 
 	render(){
 		return(
