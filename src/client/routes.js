@@ -5,6 +5,7 @@ import Layout from '../server/layout/layout'
 import HomeScreen from './screens/Home/home'
 import LoginScreen from './screens/Login/Login'
 import TodoScreen from './screens/Todo/Todo'
+import HighchartsScreen from './screens/Highcharts/Highcharts'
 
 //shared routes, renderToString and app.js
 const routes = (
@@ -13,6 +14,7 @@ const routes = (
        <Route path="login" component={LoginScreen} />
        <Route path="home" component={HomeScreen} />
        <Route path="todo" component={TodoScreen} />
+       <Route path="highcharts" component={HighchartsScreen} />
        <Route path="*" component={HomeScreen}/>
     </Route>
 )
