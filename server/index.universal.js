@@ -36,6 +36,8 @@ app.get('*', function(req, res) {
     res.send(`
       <!DOCTYPE html>
           <html>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
             <head>
               <link href="//cdn.muicss.com/mui-0.6.5/css/mui.min.css" rel="stylesheet" type="text/css" />
             </head>

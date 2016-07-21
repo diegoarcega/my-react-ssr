@@ -8,7 +8,6 @@ let initialState = {}
 typeof window === 'undefined' ?  initialState = initialData : initialState = window.__REDUX_STATE__.todos
 
 export default function todosReducer(todos = initialState, action) {
-	console.log(action)
 	switch(action.type){
 		case 'FETCH_ALL_TODOS':
 			return todos
