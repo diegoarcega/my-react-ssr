@@ -21,6 +21,9 @@ class Highcharts extends Component{
 
 		return (
 			<div className="mui-row">
+				<div className="mui-col-md-6">
+					<ReactHighcharts config={chartsData.donuts}></ReactHighcharts>
+				</div>
 				{plotOptions.map((item, index) => (
 					<div className="mui-col-md-6" key={index}>
 						<h1></h1>
@@ -42,9 +45,7 @@ class Highcharts extends Component{
 	    		</div>
 				)
 				)}
-				<div className="mui-col-md-6">
-					<ReactHighcharts config={chartsData.donuts}></ReactHighcharts>
-				</div>
+
 	  	</div>
 	)
 	}
