@@ -84,12 +84,6 @@ class Todo extends Component{
 							/>
 							))}
 					</List>
-
-					{/*<TodoList
-						toggleItem={this.props.actions.toggleItem}
-						deleteItem={this.props.actions.deleteItem}
-						todos={this.state.listRequest.todos}
-						/>*/}
 				</div>
 			</div>
 			)
