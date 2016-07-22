@@ -11,7 +11,7 @@
     "prod": "npm run clean && webpack --config webpack.config.dist.js && npm run copy",
     "dev": "NODE_ENV=development ./node_modules/.bin/nodemon --exec ./node_modules/.bin/babel-node index.js",
     "dist": "NODE_ENV=production ./node_modules/.bin/babel-node index.js ",
-    "kill": "fuser -k 30000/tcp",
+    "kill": "fuser -k 30000/tcp && killall -9 node",
     "deploy": "surge --project ./dist --domain diegoarcega-react.surge.sh"
   },
   "repository": {

@@ -1,3 +1,4 @@
+import fs from 'fs'
 import express from 'express'
 import path from 'path'
 import React from 'react'
@@ -10,6 +11,10 @@ import app from './middleware'
 import authAPI from './api/auth'
 import todosAPI from './api/todos'
 import postsAPI from './api/posts'
+
+
+let MuiCSSstyles = fs.readFileSync(__dirname + '/../node_modules/muicss/lib/css/mui.min.css', 'utf-8')
+
 
 const DIST_DIR = path.resolve(__dirname + '/../dist')
 
@@ -39,7 +44,7 @@ app.get('*', function(req, res) {
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <head>
-              <link href="//cdn.muicss.com/mui-0.6.5/css/mui.min.css" rel="stylesheet" type="text/css" />
+              <style>${MuiCSSstyles}</style>
             </head>
             <body>
               <div id="root">${body}</div>
