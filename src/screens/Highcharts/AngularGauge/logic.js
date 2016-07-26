@@ -1,4 +1,4 @@
-const AngularGauge = (function() {
+const Logic = (function() {
 
   let fixedConfigs = require('./configs') //gets the fixed configurations for solidGauge
   let gaugeOptions = fixedConfigs //sets the fixed configurations into gaugeOptions
@@ -46,4 +46,4 @@ const AngularGauge = (function() {
 }())
 
 
-export default AngularGauge
+export default Logic
