@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Highcharts from 'highcharts'
 import HighchartsExporting from 'highcharts/modules/exporting'
 import HighchartsMore from 'highcharts-more'
-// import HighchartsSolidGauge from 'highcharts/modules/solid-gauge'
 import Logic from './logic'
 
 
@@ -10,7 +9,6 @@ class AngularGaugeComponent extends Component {
   componentDidMount(){
     HighchartsExporting(Highcharts)
     HighchartsMore(Highcharts)
-    // HighchartsSolidGauge(Highcharts)
 
     Logic.setRawData(this.props.widgets)
 

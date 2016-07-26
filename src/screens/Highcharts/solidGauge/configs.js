@@ -8,10 +8,10 @@ const fixedConfigs = {
   title: {
     text: null
   },
-  exporting:{
+  exporting: {
     enabled: false
   },
-  credits:{
+  credits: {
     enabled: false
   },
   pane: {
@@ -77,4 +77,7 @@ const variableConfigs = {
   }]
 }
 
-module.exports = fixedConfigs
+export {
+  fixedConfigs,
+  variableConfigs
+}

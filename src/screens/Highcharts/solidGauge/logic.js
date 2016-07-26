@@ -1,7 +1,8 @@
 const Logic = (function() {
 
-  let fixedConfigs = require('./configs') //gets the fixed configurations for solidGauge
-  let gaugeOptions = fixedConfigs //sets the fixed configurations into gaugeOptions
+  let configs = require('./configs') //gets the fixed configurations for solidGauge
+  console.log(configs);
+  let gaugeOptions = configs.fixedConfigs //sets the fixed configurations into gaugeOptions
   let rawData = [] //what comes from the http request/this.props.widgets
   let result = {} //the rawData after being processed. It will be used to setGaugeOptions
 
