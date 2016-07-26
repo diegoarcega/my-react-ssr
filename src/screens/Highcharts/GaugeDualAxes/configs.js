@@ -73,6 +73,7 @@ const fixedConfigs = {
 
 const variableConfigs = {
   series: [{
+    enableMouseTracking: false,
     name: 'Speed',
     data: [80],
     dataLabels: {

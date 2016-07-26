@@ -16,7 +16,7 @@ const fixedConfigs = {
   },
   pane: {
     center: ['50%', '85%'],
-    size: '140%',
+    size: '100%',
     startAngle: -90,
     endAngle: 90,
     background: {
@@ -70,10 +70,7 @@ const variableConfigs = {
         'black' + '">{y}</span><br/>' +
         '<span style="font-size:12px;color:silver">km/h</span></div>'
     },
-    tooltip: {
-      enabled: false,
-      valueSuffix: ' km/h'
-    }
+    enableMouseTracking: false
   }]
 }
 

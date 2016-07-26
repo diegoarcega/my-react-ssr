@@ -116,6 +116,7 @@ const variableConfigs = {
     text: 'Gauge'
   },
   series: [{
+    enableMouseTracking: false,
     name: 'Speed',
     data: [80],
     dataLabels: {

@@ -42,15 +42,6 @@ var CONFIG = {
           warnings: false
         }
       })
-      // new webpack.optimize.OccurenceOrderPlugin(),
-      // new webpack.HotModuleReplacementPlugin(),
-      // new webpack.DefinePlugin({
-      //     '__DEV__': true,
-      //     'process.env': {
-      //       'NODE_ENV': JSON.stringify('development')
-      //     }
-      // }),
-      // new webpack.NoErrorsPlugin()
     ],
     devtool: 'source-map'
 }

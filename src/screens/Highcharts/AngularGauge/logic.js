@@ -33,7 +33,8 @@ const Logic = (function() {
         format: '<div style="text-align:center"><span style="font-size:25px;color:' +
           'black' + '">{y}</span><br/>' +
           '<span style="font-size:12px;color:silver">'+ result.unit +'</span></div>'
-      }
+      },
+      enableMouseTracking: false
     }]
   }
 

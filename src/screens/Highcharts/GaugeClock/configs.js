@@ -90,6 +90,7 @@ const fixedConfigs = {
 
 const variableConfigs = {
   series: [{
+    enableMouseTracking: false,
     data: [{
       id: 'hour',
       y: getNow().hours,
