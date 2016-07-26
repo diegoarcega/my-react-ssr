@@ -5,7 +5,7 @@ var SRC_DIR = path.resolve(__dirname, 'src');
 
 var CONFIG = {
     entry: {
-      app: SRC_DIR + '/client/index.js'
+      app: SRC_DIR + '/index.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist/assets'),

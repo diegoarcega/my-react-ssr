@@ -6,7 +6,7 @@ var SRC_DIR = path.resolve(__dirname + '/../src/');
 module.exports = {
     entry: [
         'webpack-hot-middleware/client?reload=true',
-        SRC_DIR + '/client/index.js',
+        SRC_DIR + '/index.js',
     ],
     output: {
         path: "/",

@@ -1,0 +1,1093 @@
+{
+    "status": true,
+    "result": {
+        "dashboard": {
+            "account": "547e1bee7dbf3af122c02572",
+            "label": "Chicago - Bus",
+            "created_at": "2015-05-25T20:41:14.159Z",
+            "updated_at": "2016-07-23T02:52:01.319Z",
+            "arrangement": [{
+                "widget_id": "5563eb6f791aa76a07f0ea0b",
+                "x": 0,
+                "y": 0,
+                "width": 4,
+                "height": 8
+            }, {
+                "widget_id": "5564e20bcf59606b07f9ed6a",
+                "x": 0,
+                "y": 8,
+                "width": 1,
+                "height": 4
+            }, {
+                "widget_id": "5564fb9dcf59606b07f9f8b1",
+                "x": 1,
+                "y": 8,
+                "width": 1,
+                "height": 4
+            }, {
+                "widget_id": "5567622bcf59606b07fadf22",
+                "x": 2,
+                "y": 8,
+                "width": 2,
+                "height": 5
+            }, {
+                "widget_id": "556616cdcf59606b07fa6355",
+                "x": 0,
+                "y": 12,
+                "width": 1,
+                "height": 4
+            }, {
+                "widget_id": "55661708cf59606b07fa6381",
+                "x": 1,
+                "y": 12,
+                "width": 1,
+                "height": 4
+            }, {
+                "widget_id": "5564b7a2791aa76a07f11f98",
+                "x": 2,
+                "y": 13,
+                "width": 2,
+                "height": 5
+            }, {
+                "widget_id": "55638937791aa76a07f0ba68",
+                "x": 0,
+                "y": 16,
+                "width": 1,
+                "height": 4
+            }, {
+                "widget_id": "55638ac7791aa76a07f0bc66",
+                "x": 1,
+                "y": 16,
+                "width": 1,
+                "height": 4
+            }, {
+                "widget_id": "55edcf025f81ec621afd4116",
+                "x": 2,
+                "y": 18,
+                "width": 2,
+                "height": 2
+            }],
+            "tags": [],
+            "public_token": "553747c0-285b-11e6-8dc6-393103428f0f",
+            "id": "556388ea791aa76a07f0ba43",
+            "from_share": true
+        },
+        "widgets": [{
+            "label": "Chicago Time",
+            "type": "gauge",
+            "realtime": true,
+            "data": [{
+                "timezone": "America/Chicago",
+                "qty": 0,
+                "bucket": "NO_BUCKET",
+                "query": "last_value"
+            }],
+            "display": {
+                "gauge_type": "clock",
+                "no_bucket": true
+            },
+            "created_at": "2015-05-25T20:42:31.490Z",
+            "updated_at": "2015-05-30T18:06:14.707Z",
+            "id": "55638937791aa76a07f0ba68"
+        }, {
+            "label": "Chicago Weather",
+            "type": "table",
+            "realtime": true,
+            "data": [{
+                "query": "last_value",
+                "bucket": "55639114791aa76a07f0c275",
+                "origin": "5563864a791aa76a07f0b824",
+                "variables": ["temp_f", "temp_c", "weather_string", "uv", "wind_mph", "wind_kph", "precip_today_in", "precip_today_metric"],
+                "timezone": "Asia/Kabul"
+            }],
+            "display": {
+                "rows": "7",
+                "columns": "2",
+                "cell": {
+                    "0_0": {
+                        "type": "constant",
+                        "constant": "Temperature (F)"
+                    },
+                    "1_0": {
+                        "type": "constant",
+                        "constant": "Temperature (C)"
+                    },
+                    "0_1": {
+                        "type": "variable",
+                        "constant": "1",
+                        "variables": {
+                            "device": {
+                                "name": "Chicago - Weather",
+                                "description": null,
+                                "interval": "1 hour",
+                                "last_run": "2015-05-26T15:14:59.729Z",
+                                "id": "5563864a791aa76a07f0b824",
+                                "group": "Analysis"
+                            },
+                            "bucket": {
+                                "account": "547e1bee7dbf3af122c02572",
+                                "name": "Chicago - Weather",
+                                "description": null,
+                                "data_amount": 144,
+                                "created_at": "2015-05-25T21:16:04.916Z",
+                                "updated_at": "2015-05-26T15:15:00.060Z",
+                                "devices": [],
+                                "id": "55639114791aa76a07f0c275"
+                            },
+                            "variable": "temp_f",
+                            "records": 19,
+                            "units": ["f"],
+                            "class": "tago-tag-success",
+                            "icon": "fa-check-circle"
+                        }
+                    },
+                    "1_1": {
+                        "type": "variable",
+                        "constant": "1",
+                        "variables": {
+                            "device": {
+                                "name": "Chicago - Weather",
+                                "description": null,
+                                "interval": "1 hour",
+                                "last_run": "2015-06-03T02:21:43.937Z",
+                                "id": "5563864a791aa76a07f0b824",
+                                "group": "Analysis"
+                            },
+                            "bucket": {
+                                "account": "547e1bee7dbf3af122c02572",
+                                "name": "Chicago - Weather",
+                                "description": null,
+                                "data_amount": 1600,
+                                "created_at": "2015-05-25T21:16:04.916Z",
+                                "updated_at": "2015-06-03T02:21:44.241Z",
+                                "devices": [],
+                                "id": "55639114791aa76a07f0c275"
+                            },
+                            "variable": "temp_c",
+                            "records": 201,
+                            "units": ["c"],
+                            "class": "tago-tag-success",
+                            "icon": "fa-check-circle"
+                        }
+                    },
+                    "2_0": {
+                        "type": "constant",
+                        "constant": "Sky"
+                    },
+                    "2_1": {
+                        "type": "variable",
+                        "constant": "Mostly Cloudy",
+                        "variables": {
+                            "device": {
+                                "name": "Chicago - Weather",
+                                "description": null,
+                                "interval": "1 hour",
+                                "last_run": "2015-05-26T15:14:59.729Z",
+                                "id": "5563864a791aa76a07f0b824",
+                                "group": "Analysis"
+                            },
+                            "bucket": {
+                                "account": "547e1bee7dbf3af122c02572",
+                                "name": "Chicago - Weather",
+                                "description": null,
+                                "data_amount": 144,
+                                "created_at": "2015-05-25T21:16:04.916Z",
+                                "updated_at": "2015-05-26T15:15:00.060Z",
+                                "devices": [],
+                                "id": "55639114791aa76a07f0c275"
+                            },
+                            "variable": "weather_string",
+                            "records": 19,
+                            "units": [],
+                            "class": "tago-tag-success",
+                            "icon": "fa-check-circle"
+                        }
+                    },
+                    "3_0": {
+                        "type": "constant",
+                        "constant": "UV"
+                    },
+                    "3_1": {
+                        "type": "variable",
+                        "constant": "1",
+                        "variables": {
+                            "device": {
+                                "name": "Chicago - Weather",
+                                "description": null,
+                                "interval": "1 hour",
+                                "last_run": "2015-05-26T15:14:59.729Z",
+                                "id": "5563864a791aa76a07f0b824",
+                                "group": "Analysis"
+                            },
+                            "bucket": {
+                                "account": "547e1bee7dbf3af122c02572",
+                                "name": "Chicago - Weather",
+                                "description": null,
+                                "data_amount": 144,
+                                "created_at": "2015-05-25T21:16:04.916Z",
+                                "updated_at": "2015-05-26T15:15:00.060Z",
+                                "devices": [],
+                                "id": "55639114791aa76a07f0c275"
+                            },
+                            "variable": "uv",
+                            "records": 19,
+                            "units": [],
+                            "class": "tago-tag-success",
+                            "icon": "fa-check-circle"
+                        }
+                    },
+                    "4_0": {
+                        "type": "constant",
+                        "constant": "Wind (mph)"
+                    },
+                    "4_1": {
+                        "type": "variable",
+                        "constant": "1",
+                        "variables": {
+                            "device": {
+                                "name": "Chicago - Weather",
+                                "description": null,
+                                "interval": "1 hour",
+                                "last_run": "2015-06-03T02:21:43.937Z",
+                                "id": "5563864a791aa76a07f0b824",
+                                "group": "Analysis"
+                            },
+                            "bucket": {
+                                "account": "547e1bee7dbf3af122c02572",
+                                "name": "Chicago - Weather",
+                                "description": null,
+                                "data_amount": 1600,
+                                "created_at": "2015-05-25T21:16:04.916Z",
+                                "updated_at": "2015-06-03T02:21:44.241Z",
+                                "devices": [],
+                                "id": "55639114791aa76a07f0c275"
+                            },
+                            "variable": "wind_mph",
+                            "records": 201,
+                            "units": ["mph"],
+                            "class": "tago-tag-success",
+                            "icon": "fa-check-circle"
+                        }
+                    },
+                    "5_0": {
+                        "type": "constant",
+                        "constant": "Wind (kph)"
+                    },
+                    "6_0": {
+                        "type": "constant",
+                        "constant": "Rain Precipitation (in)"
+                    },
+                    "7_0": {
+                        "type": "constant",
+                        "constant": "Rain precipitation (mm)"
+                    },
+                    "5_1": {
+                        "type": "variable",
+                        "constant": "1",
+                        "variables": {
+                            "device": {
+                                "name": "Chicago - Weather",
+                                "description": null,
+                                "interval": "1 hour",
+                                "last_run": "2015-09-07T16:57:25.017Z",
+                                "id": "5563864a791aa76a07f0b824",
+                                "group": "Analysis"
+                            },
+                            "bucket": {
+                                "account": "547e1bee7dbf3af122c02572",
+                                "name": "Chicago - Weather",
+                                "description": null,
+                                "created_at": "2015-05-25T21:16:04.916Z",
+                                "updated_at": "2015-06-18T22:58:27.710Z",
+                                "devices": [],
+                                "visible": true,
+                                "internal": false,
+                                "id": "55639114791aa76a07f0c275",
+                                "data_amount": 4312
+                            },
+                            "variable": "wind_kph",
+                            "records": 540,
+                            "units": ["kph"],
+                            "class": "tago-tag-success",
+                            "icon": "fa-check-circle"
+                        }
+                    },
+                    "6_1": {
+                        "type": "variable",
+                        "constant": "1",
+                        "variables": {
+                            "device": {
+                                "name": "Chicago - Weather",
+                                "description": null,
+                                "interval": "1 hour",
+                                "last_run": "2015-09-07T16:57:25.017Z",
+                                "id": "5563864a791aa76a07f0b824",
+                                "group": "Analysis"
+                            },
+                            "bucket": {
+                                "account": "547e1bee7dbf3af122c02572",
+                                "name": "Chicago - Weather",
+                                "description": null,
+                                "created_at": "2015-05-25T21:16:04.916Z",
+                                "updated_at": "2015-06-18T22:58:27.710Z",
+                                "devices": [],
+                                "visible": true,
+                                "internal": false,
+                                "id": "55639114791aa76a07f0c275",
+                                "data_amount": 4312
+                            },
+                            "variable": "precip_today_in",
+                            "records": 540,
+                            "units": ["in", "mph"],
+                            "class": "tago-tag-success",
+                            "icon": "fa-check-circle"
+                        }
+                    },
+                    "7_1": {
+                        "type": "variable",
+                        "constant": "1",
+                        "variables": {
+                            "device": {
+                                "name": "Chicago - Weather",
+                                "description": null,
+                                "interval": "1 hour",
+                                "last_run": "2015-05-26T15:14:59.729Z",
+                                "id": "5563864a791aa76a07f0b824",
+                                "group": "Analysis"
+                            },
+                            "bucket": {
+                                "account": "547e1bee7dbf3af122c02572",
+                                "name": "Chicago - Weather",
+                                "description": null,
+                                "data_amount": 144,
+                                "created_at": "2015-05-25T21:16:04.916Z",
+                                "updated_at": "2015-05-26T15:15:00.060Z",
+                                "devices": [],
+                                "id": "55639114791aa76a07f0c275"
+                            },
+                            "variable": "precip_today_metric",
+                            "records": 19,
+                            "units": ["mm"],
+                            "class": "tago-tag-success",
+                            "icon": "fa-check-circle"
+                        }
+                    }
+                },
+                "no_bucket": true,
+                "table_type": "table"
+            },
+            "created_at": "2015-05-25T20:49:11.220Z",
+            "updated_at": "2015-09-07T17:51:04.606Z",
+            "id": "55638ac7791aa76a07f0bc66"
+        }, {
+            "label": "Map",
+            "type": "map",
+            "realtime": true,
+            "data": [{
+                "timezone": "America/Chicago",
+                "qty": 20,
+                "bucket": "556391a7791aa76a07f0c283",
+                "origin": "5563914e791aa76a07f0c27b",
+                "variables": ["location"],
+                "query": null,
+                "start_date": "1 hour",
+                "detail": true
+            }, {
+                "timezone": "America/Chicago",
+                "qty": 1000,
+                "bucket": "55660f9dcf59606b07fa5fe5",
+                "origin": "556613d2cf59606b07fa6134",
+                "variables": ["location"],
+                "query": null,
+                "start_date": "1 hour",
+                "detail": true
+            }],
+            "display": {
+                "map_icons": {
+                    "5563914e791aa76a07f0c27b": {
+                        "path": "M41.403,11.11c-0.371-3.627-0.962-6.451-1.897-7.561c-3.855-4.564-30.859-4.898-33.925,0c-0.75,1.2-1.276,4.014-1.629,7.567c-1.139,0.134-2.026,1.093-2.026,2.267v4.443c0,0.988,0.626,1.821,1.5,2.146c-0.207,6.998-0.039,14.299,0.271,17.93c0,2.803,1.883,2.338,1.883,2.338h1.765v3.026c0,1.2,1.237,2.171,2.761,2.171c1.526,0,2.763-0.971,2.763-2.171V40.24h20.534v3.026c0,1.2,1.236,2.171,2.762,2.171c1.524,0,2.761-0.971,2.761-2.171V40.24h0.58c0,0,2.216,0.304,2.358-1.016c0-3.621,0.228-11.646,0.04-19.221c0.929-0.291,1.607-1.147,1.607-2.177v-4.443C43.512,12.181,42.582,11.206,41.403,11.11z M12.176,4.2h20.735v3.137H12.176V4.2z M12.472,36.667c-1.628,0-2.947-1.32-2.947-2.948c0-1.627,1.319-2.946,2.947-2.946s2.948,1.319,2.948,2.946C15.42,35.347,14.101,36.667,12.472,36.667z M32.8,36.667c-1.627,0-2.949-1.32-2.949-2.948c0-1.627,1.321-2.946,2.949-2.946s2.947,1.319,2.947,2.946C35.748,35.347,34.428,36.667,32.8,36.667z M36.547,23.767H8.54V9.077h28.007V23.767z",
+                        "css_class": "flaticon flaticon-vehicle12",
+                        "color": "#974dc4",
+                        "anchor": [22, 48],
+                        "scale": 0.7,
+                        "order": 4
+                    },
+                    "54e4e6efef223a8406781b59": {
+                        "path": "M93.156,43.553l-1.063-3.109c-0.588-1.721-2.46-3.11-4.178-3.11h-3.859c-2.897-8.129-6.44-17.941-7.471-20.24c-1.601-3.574-6.721-5.189-9.534-5.973c0,0-4.702-1.788-20.384-1.788c-15.681,0-20.384,1.787-20.384,1.787c-3.295,1.102-7.877,2.66-9.698,6.131c-0.854,1.635-4.452,11.725-7.381,20.082H5.423c-1.717,0-3.588,1.392-4.177,3.111l-1.068,3.109c-0.588,1.721,0.327,3.111,2.045,3.111h3.732C5.473,48.062,5.18,48.91,5.18,48.91c-0.298,0.506-0.513,2.834-0.513,3.459v17.629v1.229v9.479c0,1.818,1.476,3.295,3.294,3.295h12.078c1.82,0,3.294-1.477,3.294-3.295v-6.039H70v6.039c0,1.818,1.476,3.295,3.294,3.295h12.077c1.82,0,3.295-1.477,3.295-3.295v-9.479v-1.229V52.367c0-0.625-0.215-2.953-0.514-3.457c0,0-0.299-0.849-0.791-2.247h3.75C92.829,46.663,93.744,45.272,93.156,43.553z M23.264,60.912h-4.992c-4.472,0-8.938-0.603-8.938-3.438v-3.438c0-3.318,1.928-3.438,4.004-3.438c2.03,0,6.049,1.717,8.694,2.901c2.884,1.289,6.112,2.367,6.112,4.515C28.145,59.998,27.029,60.912,23.264,60.912z M16.307,38.587c2.455-10.202,5.127-15.961,5.717-17.57c0.471-1.167,0.929-4.773,24.645-4.773S70.943,20.358,71,20.409c0.732,2.185,3.631,8.77,5.95,18.172c0,0-10.015,3.412-30.287,3.412C26.391,41.993,16.307,38.587,16.307,38.587z M65.187,58.009c0-2.152,3.229-3.225,6.111-4.514c2.646-1.18,6.664-2.902,8.693-2.902c2.077,0,4.004,0.121,4.004,3.439v3.439h0.006c0,2.842-4.467,3.438-8.938,3.438h-4.998C66.306,60.912,65.187,59.998,65.187,58.009z",
+                        "css_class": "flaticon flaticon-car95",
+                        "color": "#2A76EA",
+                        "anchor": [48, 77],
+                        "scale": 0.4
+                    },
+                    "556613d2cf59606b07fa6134": {
+                        "path": "M41.403,11.11c-0.371-3.627-0.962-6.451-1.897-7.561c-3.855-4.564-30.859-4.898-33.925,0c-0.75,1.2-1.276,4.014-1.629,7.567c-1.139,0.134-2.026,1.093-2.026,2.267v4.443c0,0.988,0.626,1.821,1.5,2.146c-0.207,6.998-0.039,14.299,0.271,17.93c0,2.803,1.883,2.338,1.883,2.338h1.765v3.026c0,1.2,1.237,2.171,2.761,2.171c1.526,0,2.763-0.971,2.763-2.171V40.24h20.534v3.026c0,1.2,1.236,2.171,2.762,2.171c1.524,0,2.761-0.971,2.761-2.171V40.24h0.58c0,0,2.216,0.304,2.358-1.016c0-3.621,0.228-11.646,0.04-19.221c0.929-0.291,1.607-1.147,1.607-2.177v-4.443C43.512,12.181,42.582,11.206,41.403,11.11z M12.176,4.2h20.735v3.137H12.176V4.2z M12.472,36.667c-1.628,0-2.947-1.32-2.947-2.948c0-1.627,1.319-2.946,2.947-2.946s2.948,1.319,2.948,2.946C15.42,35.347,14.101,36.667,12.472,36.667z M32.8,36.667c-1.627,0-2.949-1.32-2.949-2.948c0-1.627,1.321-2.946,2.949-2.946s2.947,1.319,2.947,2.946C35.748,35.347,34.428,36.667,32.8,36.667z M36.547,23.767H8.54V9.077h28.007V23.767z",
+                        "css_class": "flaticon flaticon-vehicle12",
+                        "color": "#139c9c",
+                        "anchor": [22, 48],
+                        "scale": 0.7,
+                        "order": 4
+                    }
+                },
+                "connect_markers": true,
+                "ignore_headings": false,
+                "infowindow_closed": true,
+                "max_points": 20,
+                "group_by": "date",
+                "map_labels": {
+                    "5563914e791aa76a07f0c27b": "Bus #1",
+                    "556613d2cf59606b07fa6134": "Bus #2"
+                }
+            },
+            "created_at": "2015-05-26T03:41:35.824Z",
+            "updated_at": "2015-08-26T23:51:40.094Z",
+            "id": "5563eb6f791aa76a07f0ea0b"
+        }, {
+            "label": "Tago Analysis (Status)",
+            "type": "table",
+            "realtime": true,
+            "data": [{
+                "query": "last_value",
+                "bucket": "556391a7791aa76a07f0c283",
+                "origin": "5563914e791aa76a07f0c27b",
+                "variables": ["id", "serie", "update_at", "speed", "stops_fuel_station", "break_pressed", "trip_odometer"],
+                "timezone": "Asia/Kabul"
+            }, {
+                "query": "last_value",
+                "bucket": "55660f9dcf59606b07fa5fe5",
+                "origin": "556613d2cf59606b07fa6134",
+                "variables": ["id", "serie", "update_at", "speed", "stops_fuel_station", "break_pressed", "trip_odometer"],
+                "timezone": "Asia/Kabul"
+            }],
+            "display": {
+                "rows": "8",
+                "columns": "3",
+                "cell": {
+                    "0_0": {
+                        "type": "constant",
+                        "constant": "⬇️"
+                    },
+                    "0_1": {
+                        "type": "constant",
+                        "constant": "Bus #1"
+                    },
+                    "0_2": {
+                        "type": "constant",
+                        "constant": "Bus #2"
+                    },
+                    "1_0": {
+                        "type": "constant",
+                        "constant": "Bus stop #"
+                    },
+                    "2_0": {
+                        "type": "constant",
+                        "constant": "Serie"
+                    },
+                    "1_1": {
+                        "type": "variable",
+                        "variables": {
+                            "device": {
+                                "name": "Chicago - Bus #1",
+                                "description": null,
+                                "interval": "2 minutes",
+                                "last_run": "2015-05-26T18:08:13.414Z",
+                                "id": "5563914e791aa76a07f0c27b",
+                                "group": "Analysis"
+                            },
+                            "bucket": {
+                                "account": "547e1bee7dbf3af122c02572",
+                                "name": "Chicago - Bus #1",
+                                "description": null,
+                                "data_amount": 388,
+                                "created_at": "2015-05-25T21:18:31.690Z",
+                                "updated_at": "2015-05-26T18:08:13.424Z",
+                                "devices": [],
+                                "id": "556391a7791aa76a07f0c283"
+                            },
+                            "variable": "id",
+                            "records": 85,
+                            "units": [],
+                            "class": "tago-tag-success",
+                            "icon": "fa-check-circle"
+                        }
+                    },
+                    "2_1": {
+                        "type": "variable",
+                        "variables": {
+                            "device": {
+                                "name": "Chicago - Bus #1",
+                                "description": null,
+                                "interval": "2 minutes",
+                                "last_run": "2015-05-26T18:08:13.414Z",
+                                "id": "5563914e791aa76a07f0c27b",
+                                "group": "Analysis"
+                            },
+                            "bucket": {
+                                "account": "547e1bee7dbf3af122c02572",
+                                "name": "Chicago - Bus #1",
+                                "description": null,
+                                "data_amount": 388,
+                                "created_at": "2015-05-25T21:18:31.690Z",
+                                "updated_at": "2015-05-26T18:08:13.424Z",
+                                "devices": [],
+                                "id": "556391a7791aa76a07f0c283"
+                            },
+                            "variable": "serie",
+                            "records": 83,
+                            "units": [],
+                            "class": "tago-tag-success",
+                            "icon": "fa-check-circle"
+                        }
+                    },
+                    "1_2": {
+                        "type": "variable",
+                        "constant": "OFF",
+                        "variables": {
+                            "device": {
+                                "name": "Chicago - Bus #2",
+                                "description": null,
+                                "interval": "3 minutes",
+                                "last_run": "2015-05-27T19:11:18.839Z",
+                                "id": "556613d2cf59606b07fa6134",
+                                "group": "Analysis"
+                            },
+                            "bucket": {
+                                "account": "547e1bee7dbf3af122c02572",
+                                "name": "Chicago - Bus #2",
+                                "description": null,
+                                "data_amount": 45,
+                                "created_at": "2015-05-27T18:40:29.680Z",
+                                "updated_at": "2015-05-27T19:11:18.853Z",
+                                "devices": [],
+                                "id": "55660f9dcf59606b07fa5fe5"
+                            },
+                            "variable": "id",
+                            "records": 863,
+                            "units": [],
+                            "class": "tago-tag-success",
+                            "icon": "fa-check-circle"
+                        }
+                    },
+                    "2_2": {
+                        "type": "variable",
+                        "constant": "OFF",
+                        "variables": {
+                            "device": {
+                                "name": "Chicago - Bus #2",
+                                "description": null,
+                                "interval": "3 minutes",
+                                "last_run": "2015-05-27T19:11:18.839Z",
+                                "id": "556613d2cf59606b07fa6134",
+                                "group": "Analysis"
+                            },
+                            "bucket": {
+                                "account": "547e1bee7dbf3af122c02572",
+                                "name": "Chicago - Bus #2",
+                                "description": null,
+                                "data_amount": 45,
+                                "created_at": "2015-05-27T18:40:29.680Z",
+                                "updated_at": "2015-05-27T19:11:18.853Z",
+                                "devices": [],
+                                "id": "55660f9dcf59606b07fa5fe5"
+                            },
+                            "variable": "serie",
+                            "records": 861,
+                            "units": [],
+                            "class": "tago-tag-success",
+                            "icon": "fa-check-circle"
+                        }
+                    },
+                    "3_0": {
+                        "type": "constant",
+                        "constant": "Updated at"
+                    },
+                    "3_1": {
+                        "type": "variable",
+                        "variables": {
+                            "device": {
+                                "name": "Chicago - Bus #1",
+                                "description": null,
+                                "interval": "2 minutes",
+                                "last_run": "2015-05-26T20:53:56.596Z",
+                                "id": "5563914e791aa76a07f0c27b",
+                                "group": "Analysis"
+                            },
+                            "bucket": {
+                                "account": "547e1bee7dbf3af122c02572",
+                                "name": "Chicago - Bus #1",
+                                "description": null,
+                                "data_amount": 698,
+                                "created_at": "2015-05-25T21:18:31.690Z",
+                                "updated_at": "2015-05-26T20:53:56.701Z",
+                                "devices": [],
+                                "id": "556391a7791aa76a07f0c283"
+                            },
+                            "variable": "update_at",
+                            "records": 2,
+                            "units": [],
+                            "class": "tago-tag-success",
+                            "icon": "fa-check-circle"
+                        }
+                    },
+                    "3_2": {
+                        "type": "variable",
+                        "constant": "OFF",
+                        "variables": {
+                            "device": {
+                                "name": "Chicago - Bus #2",
+                                "description": null,
+                                "interval": "3 minutes",
+                                "last_run": "2015-05-27T19:11:18.839Z",
+                                "id": "556613d2cf59606b07fa6134",
+                                "group": "Analysis"
+                            },
+                            "bucket": {
+                                "account": "547e1bee7dbf3af122c02572",
+                                "name": "Chicago - Bus #2",
+                                "description": null,
+                                "data_amount": 45,
+                                "created_at": "2015-05-27T18:40:29.680Z",
+                                "updated_at": "2015-05-27T19:11:18.853Z",
+                                "devices": [],
+                                "id": "55660f9dcf59606b07fa5fe5"
+                            },
+                            "variable": "update_at",
+                            "records": 711,
+                            "units": [],
+                            "class": "tago-tag-success",
+                            "icon": "fa-check-circle"
+                        }
+                    },
+                    "4_1": {
+                        "type": "variable",
+                        "variables": {
+                            "device": {
+                                "name": "Chicago - Bus #1",
+                                "description": null,
+                                "interval": "2 minutes",
+                                "last_run": "2015-05-27T06:26:24.038Z",
+                                "id": "5563914e791aa76a07f0c27b",
+                                "group": "Analysis"
+                            },
+                            "bucket": {
+                                "account": "547e1bee7dbf3af122c02572",
+                                "name": "Chicago - Bus #1",
+                                "description": null,
+                                "data_amount": 3156,
+                                "created_at": "2015-05-25T21:18:31.690Z",
+                                "updated_at": "2015-05-27T06:26:24.087Z",
+                                "devices": [],
+                                "id": "556391a7791aa76a07f0c283"
+                            },
+                            "variable": "speed",
+                            "records": 166551,
+                            "units": ["% capacity", "% capacit", "mph"],
+                            "class": "tago-tag-success",
+                            "icon": "fa-check-circle"
+                        }
+                    },
+                    "4_0": {
+                        "type": "constant",
+                        "constant": "Speed (mph)"
+                    },
+                    "4_2": {
+                        "type": "variable",
+                        "constant": "OFF",
+                        "variables": {
+                            "device": {
+                                "name": "Chicago - Bus #2",
+                                "description": null,
+                                "interval": "3 minutes",
+                                "last_run": "2015-05-27T19:11:18.839Z",
+                                "id": "556613d2cf59606b07fa6134",
+                                "group": "Analysis"
+                            },
+                            "bucket": {
+                                "account": "547e1bee7dbf3af122c02572",
+                                "name": "Chicago - Bus #2",
+                                "description": null,
+                                "data_amount": 45,
+                                "created_at": "2015-05-27T18:40:29.680Z",
+                                "updated_at": "2015-05-27T19:11:18.853Z",
+                                "devices": [],
+                                "id": "55660f9dcf59606b07fa5fe5"
+                            },
+                            "variable": "speed",
+                            "records": 168517,
+                            "units": ["% capacity", "% capacit", "mph"],
+                            "class": "tago-tag-success",
+                            "icon": "fa-check-circle"
+                        }
+                    },
+                    "5_0": {
+                        "type": "constant",
+                        "constant": "Stops at fuel station"
+                    },
+                    "5_1": {
+                        "type": "variable",
+                        "variables": {
+                            "device": {
+                                "name": "Chicago - Bus #1",
+                                "description": null,
+                                "interval": "2 minutes",
+                                "last_run": "2015-05-27T06:26:24.038Z",
+                                "id": "5563914e791aa76a07f0c27b",
+                                "group": "Analysis"
+                            },
+                            "bucket": {
+                                "account": "547e1bee7dbf3af122c02572",
+                                "name": "Chicago - Bus #1",
+                                "description": null,
+                                "data_amount": 3156,
+                                "created_at": "2015-05-25T21:18:31.690Z",
+                                "updated_at": "2015-05-27T06:26:24.087Z",
+                                "devices": [],
+                                "id": "556391a7791aa76a07f0c283"
+                            },
+                            "variable": "stops_fuel_station",
+                            "records": 217,
+                            "units": [],
+                            "class": "tago-tag-success",
+                            "icon": "fa-check-circle"
+                        }
+                    },
+                    "6_1": {
+                        "type": "variable",
+                        "variables": {
+                            "device": {
+                                "name": "Chicago - Bus #1",
+                                "description": null,
+                                "interval": "2 minutes",
+                                "last_run": "2015-05-27T06:26:24.038Z",
+                                "id": "5563914e791aa76a07f0c27b",
+                                "group": "Analysis"
+                            },
+                            "bucket": {
+                                "account": "547e1bee7dbf3af122c02572",
+                                "name": "Chicago - Bus #1",
+                                "description": null,
+                                "data_amount": 3156,
+                                "created_at": "2015-05-25T21:18:31.690Z",
+                                "updated_at": "2015-05-27T06:26:24.087Z",
+                                "devices": [],
+                                "id": "556391a7791aa76a07f0c283"
+                            },
+                            "variable": "break_pressed",
+                            "records": 319,
+                            "units": [],
+                            "class": "tago-tag-success",
+                            "icon": "fa-check-circle"
+                        }
+                    },
+                    "6_0": {
+                        "type": "constant",
+                        "constant": "Brake Pressed"
+                    },
+                    "7_1": {
+                        "type": "variable",
+                        "variables": {
+                            "device": {
+                                "name": "Chicago - Bus #1",
+                                "description": null,
+                                "interval": "2 minutes",
+                                "last_run": "2015-05-27T06:26:24.038Z",
+                                "id": "5563914e791aa76a07f0c27b",
+                                "group": "Analysis"
+                            },
+                            "bucket": {
+                                "account": "547e1bee7dbf3af122c02572",
+                                "name": "Chicago - Bus #1",
+                                "description": null,
+                                "data_amount": 3156,
+                                "created_at": "2015-05-25T21:18:31.690Z",
+                                "updated_at": "2015-05-27T06:26:24.087Z",
+                                "devices": [],
+                                "id": "556391a7791aa76a07f0c283"
+                            },
+                            "variable": "trip_odometer",
+                            "records": 4129,
+                            "units": [],
+                            "class": "tago-tag-success",
+                            "icon": "fa-check-circle"
+                        }
+                    },
+                    "7_0": {
+                        "type": "constant",
+                        "constant": "Trip odometer"
+                    },
+                    "5_2": {
+                        "type": "variable",
+                        "constant": "OFF",
+                        "variables": {
+                            "device": {
+                                "name": "Chicago - Bus #2",
+                                "description": null,
+                                "interval": "3 minutes",
+                                "last_run": "2015-05-27T19:11:18.839Z",
+                                "id": "556613d2cf59606b07fa6134",
+                                "group": "Analysis"
+                            },
+                            "bucket": {
+                                "account": "547e1bee7dbf3af122c02572",
+                                "name": "Chicago - Bus #2",
+                                "description": null,
+                                "data_amount": 45,
+                                "created_at": "2015-05-27T18:40:29.680Z",
+                                "updated_at": "2015-05-27T19:11:18.853Z",
+                                "devices": [],
+                                "id": "55660f9dcf59606b07fa5fe5"
+                            },
+                            "variable": "stops_fuel_station",
+                            "records": 613,
+                            "units": [],
+                            "class": "tago-tag-success",
+                            "icon": "fa-check-circle"
+                        }
+                    },
+                    "6_2": {
+                        "type": "variable",
+                        "constant": "OFF",
+                        "variables": {
+                            "device": {
+                                "name": "Chicago - Bus #2",
+                                "description": null,
+                                "interval": "3 minutes",
+                                "last_run": "2015-05-27T19:11:18.839Z",
+                                "id": "556613d2cf59606b07fa6134",
+                                "group": "Analysis"
+                            },
+                            "bucket": {
+                                "account": "547e1bee7dbf3af122c02572",
+                                "name": "Chicago - Bus #2",
+                                "description": null,
+                                "data_amount": 45,
+                                "created_at": "2015-05-27T18:40:29.680Z",
+                                "updated_at": "2015-05-27T19:11:18.853Z",
+                                "devices": [],
+                                "id": "55660f9dcf59606b07fa5fe5"
+                            },
+                            "variable": "break_pressed",
+                            "records": 715,
+                            "units": [],
+                            "class": "tago-tag-success",
+                            "icon": "fa-check-circle"
+                        }
+                    },
+                    "7_2": {
+                        "type": "variable",
+                        "constant": "OFF",
+                        "variables": {
+                            "device": {
+                                "name": "Chicago - Bus #2",
+                                "description": null,
+                                "interval": "3 minutes",
+                                "last_run": "2015-05-27T19:11:18.839Z",
+                                "id": "556613d2cf59606b07fa6134",
+                                "group": "Analysis"
+                            },
+                            "bucket": {
+                                "account": "547e1bee7dbf3af122c02572",
+                                "name": "Chicago - Bus #2",
+                                "description": null,
+                                "data_amount": 45,
+                                "created_at": "2015-05-27T18:40:29.680Z",
+                                "updated_at": "2015-05-27T19:11:18.853Z",
+                                "devices": [],
+                                "id": "55660f9dcf59606b07fa5fe5"
+                            },
+                            "variable": "trip_odometer",
+                            "records": 4553,
+                            "units": [],
+                            "class": "tago-tag-success",
+                            "icon": "fa-check-circle"
+                        }
+                    },
+                    "8_0": {
+                        "type": "constant",
+                        "constant": "Internal temperature"
+                    },
+                    "9_0": {
+                        "type": "constant",
+                        "constant": "Air conditioning (ON/OFF)"
+                    },
+                    "8_1": {
+                        "type": "constant",
+                        "constant": "N/A"
+                    },
+                    "8_2": {
+                        "type": "constant",
+                        "constant": "N/A"
+                    },
+                    "9_1": {
+                        "type": "constant",
+                        "constant": "OFF"
+                    },
+                    "9_2": {
+                        "type": "constant",
+                        "constant": "OFF"
+                    },
+                    "10_1": {
+                        "type": "constant",
+                        "constant": "OFF"
+                    },
+                    "10_2": {
+                        "type": "constant",
+                        "constant": "OFF"
+                    },
+                    "11_1": {
+                        "type": "constant",
+                        "constant": "OFF"
+                    },
+                    "11_2": {
+                        "type": "constant",
+                        "constant": "OFF"
+                    },
+                    "10_0": {
+                        "type": "constant",
+                        "constant": "OFF"
+                    },
+                    "11_0": {
+                        "type": "constant",
+                        "constant": "OFF"
+                    }
+                },
+                "table_type": "table"
+            },
+            "created_at": "2015-05-26T18:12:50.333Z",
+            "updated_at": "2015-07-17T16:10:20.097Z",
+            "id": "5564b7a2791aa76a07f11f98"
+        }, {
+            "label": "Speed Bus #1",
+            "type": "gauge",
+            "realtime": true,
+            "data": [{
+                "qty": 1000,
+                "query": "last_value",
+                "bucket": "556391a7791aa76a07f0c283",
+                "origin": "5563914e791aa76a07f0c27b",
+                "variables": ["speed"],
+                "timezone": "Asia/Kabul"
+            }],
+            "display": {
+                "gauge_type": "solid",
+                "numberformat": 0,
+                "unit": "",
+                "minimum": "0",
+                "maximum": "90",
+                "hide_variables": true
+            },
+            "created_at": "2015-05-26T21:13:47.487Z",
+            "updated_at": "2015-09-07T17:30:17.569Z",
+            "id": "5564e20bcf59606b07f9ed6a"
+        }, {
+            "label": "Fuel Bus #1",
+            "type": "gauge",
+            "realtime": true,
+            "data": [{
+                "qty": 1000,
+                "query": "last_value",
+                "bucket": "556391a7791aa76a07f0c283",
+                "origin": "5563914e791aa76a07f0c27b",
+                "variables": ["fuel_level"],
+                "timezone": "Asia/Kabul"
+            }],
+            "display": {
+                "gauge_type": "solid",
+                "numberformat": "0.00",
+                "unit": "% capacity",
+                "minimum": "0",
+                "maximum": "100",
+                "hide_variables": true
+            },
+            "created_at": "2015-05-26T23:02:53.315Z",
+            "updated_at": "2015-09-07T17:45:07.045Z",
+            "id": "5564fb9dcf59606b07f9f8b1"
+        }, {
+            "label": "Speed Bus #2",
+            "type": "gauge",
+            "realtime": true,
+            "data": [{
+                "qty": 1000,
+                "query": "last_value",
+                "bucket": "55660f9dcf59606b07fa5fe5",
+                "origin": "556613d2cf59606b07fa6134",
+                "variables": ["speed"],
+                "timezone": "Asia/Kabul"
+            }],
+            "display": {
+                "gauge_type": "solid",
+                "numberformat": "0.0",
+                "unit": "mph",
+                "minimum": "0",
+                "maximum": "95",
+                "hide_variables": true
+            },
+            "created_at": "2015-05-27T19:11:09.560Z",
+            "updated_at": "2015-09-07T17:44:09.448Z",
+            "id": "556616cdcf59606b07fa6355"
+        }, {
+            "label": "Fuel Bus #2",
+            "type": "gauge",
+            "realtime": true,
+            "data": [{
+                "qty": 1000,
+                "query": "last_value",
+                "bucket": "55660f9dcf59606b07fa5fe5",
+                "origin": "556613d2cf59606b07fa6134",
+                "timezone": "Asia/Kabul",
+                "variables": ["fuel_level"]
+            }],
+            "display": {
+                "gauge_type": "solid",
+                "numberformat": "0.00",
+                "unit": "% capacity",
+                "minimum": "0",
+                "maximum": "100",
+                "hide_variables": true
+            },
+            "created_at": "2015-05-27T19:12:08.634Z",
+            "updated_at": "2015-09-07T21:22:09.334Z",
+            "id": "55661708cf59606b07fa6381"
+        }, {
+            "label": "Comparison between bus speeds",
+            "type": "chart",
+            "realtime": true,
+            "data": [{
+                "timezone": "America/Chicago",
+                "start_date": "40 minutes",
+                "qty": 120,
+                "bucket": "55660f9dcf59606b07fa5fe5",
+                "origin": "556613d2cf59606b07fa6134",
+                "variables": ["speed"]
+            }, {
+                "timezone": "America/Chicago",
+                "start_date": "40 minutes",
+                "qty": 1000,
+                "bucket": "556391a7791aa76a07f0c283",
+                "origin": "5563914e791aa76a07f0c27b",
+                "variables": ["speed"]
+            }],
+            "display": {
+                "chart_type": "spline",
+                "show_device_name": true,
+                "max_points": 120
+            },
+            "created_at": "2015-05-28T18:44:59.484Z",
+            "updated_at": "2015-07-24T01:43:33.484Z",
+            "id": "5567622bcf59606b07fadf22"
+        }, {
+            "label": "NOTE",
+            "type": "note",
+            "realtime": false,
+            "data": {
+                "qty": 10000,
+                "timezone": "Asia/Kabul"
+            },
+            "display": {
+                "text": "### This dashboard uses **simulated** data that is generated by Tago scripts. You can see all scripts at Tago [Github](https://github.com/tago-io/tago-analysis-examples) page."
+            },
+            "created_at": "2015-09-07T17:53:06.331Z",
+            "updated_at": "2015-09-26T01:23:13.523Z",
+            "id": "55edcf025f81ec621afd4116"
+        }]
+    }
+}

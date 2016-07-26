@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run dist",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/.bin/_mocha ./tests/index",
     "clean": "rimraf dist/ ",
     "copy": "copyfiles -f src/index.html src/favicon.ico dist",
     "prod": "npm run clean && webpack --config webpack.config.dist.js && npm run copy",
@@ -51,6 +51,7 @@
     "highcharts": "^4.2.5",
     "highcharts-exporting": "^0.1.2",
     "highcharts-more": "^0.1.2",
+    "highcharts-solid-gauge": "^0.1.2",
     "history": "^2.1.2",
     "material-ui": "^0.15.1",
     "mongodb": "^2.2.4",
@@ -66,9 +67,13 @@
     "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-enzyme": "^0.5.0",
     "copyfiles": "^1.0.0",
     "css-loader": "^0.23.1",
+    "enzyme": "^2.4.1",
     "file-loader": "^0.8.5",
+    "mocha": "^2.5.3",
     "nodemon": "^1.9.2",
     "object-assign": "^4.1.0",
     "react-css-modules": "^3.7.6",
