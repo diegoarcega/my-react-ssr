@@ -1,1 +1,1 @@
-require('../src/screens/Highcharts/components/gauge.test')
+require('../src/screens/Highcharts/SolidGauge/test')
