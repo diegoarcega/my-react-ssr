@@ -6,7 +6,7 @@ import HighchartsSolidGauge from 'highcharts/modules/solid-gauge'
 import Logic from './logic'
 
 
-class GaugeComponent extends Component {
+class SolidGaugeComponent extends Component {
   componentDidMount(){
     HighchartsExporting(Highcharts)
     HighchartsMore(Highcharts)
@@ -41,4 +41,4 @@ class GaugeComponent extends Component {
   }
 }
 
-export default GaugeComponent
+export default SolidGaugeComponent
