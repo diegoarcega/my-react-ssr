@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import GridCell from './components/GridCell'
-import gridData from './components/gridData'
-import successMatch from './components/successMatch'
+import gridData from './gridData'
+import successMatch from './successMatch'
 import random from 'lodash/random'
 import isEqual from 'lodash/isEqual'
 
@@ -12,29 +12,40 @@ class Home extends Component{
     super(props)
     this.updateGrid = this.updateGrid.bind(this)
     this.player1 = 'player1'
-    this.player2 = 'automaticPlayer'
+    this.player2 = 'player2'
   }
 
   componentWillMount(){
     this.setState({
-      grid: gridData
+      grid: [...gridData]
     })
   }
 
   updateGrid(clickedCell, player){
+    if(this.state.gameOver) return
+    let alreadyChosen = false;
     const newGrid = this.state.grid.map(cell => {
       if(cell.id === clickedCell && cell.player === 'none'){
         cell.player = player;
+        this.setState({alert: ''})
+        alreadyChosen = false;
+        return cell
+      }else if(cell.id === clickedCell && cell.player !== 'none'){
+        this.setState({alert: 'Cell already talken, choose another option'})
+        alreadyChosen = true;
         return cell
       }
       return cell
     })
 
-    this.setState({
-      grid: newGrid
-    }, () => {
-      if(!this.winner()) this.nextPlayer(player)
-    })
+    if(alreadyChosen === false){
+      this.setState({
+        grid: newGrid
+      }, () => {
+        if(!this.winner()) this.nextPlayer(player)
+      })
+    }
+
   }
 
   nextPlayer(player){
@@ -47,18 +58,21 @@ class Home extends Component{
     const player2 = this.state.grid.filter(grid => grid.player === this.player2).map(cell => cell.id)
     const winner1 = successMatch.some(match => match.every(matchValue => player1.includes(matchValue)))
     const winner2 = successMatch.some(match => match.every(matchValue => player2.includes(matchValue)))
-    if(winner1) alert('player1 wins')
-    if(winner2) alert('player2 wins')
-    return winner1 || winner2
+    const turns = this.state.grid.filter(cell => cell.player !== 'none').length
+    const tie = !winner1 && !winner2 && turns === 9
+    if(winner1) this.setState({alert: `${this.player1} wins`, gameOver: true})
+    if(winner2) this.setState({alert: `${this.player2} wins`, gameOver: true})
+    if(tie) this.setState({alert: 'Tie, nobody wins', gameOver: true})
+    return winner1 || winner2 || tie
   }
 
   randomValidMove(){
     const promise = new Promise(resolve => {
-      const state = this.state
+      const state = Object.assign({}, this.state)
       let autoCellId;
       let isCellMarked;
-      randomMove()
 
+      randomMove()
       resolve(autoCellId)
 
       function randomMove(){
@@ -73,18 +87,21 @@ class Home extends Component{
 
   secondPlayerMove(){
     this.randomValidMove().then(cellId => {
-      setTimeout(()=> this.updateGrid(cellId, this.player2), 500)
+      setTimeout(()=> this.updateGrid(cellId, this.player2), 100)
     })
   }
 
   firstPlayerMove(cellId){
-    if(!this.winner()) this.updateGrid(cellId, this.player1)
+    this.updateGrid(cellId, this.player1)
   }
 
 	render(){
 		return(
 			<div>
         <h1>TicTacToe</h1>
+        <h3 className="mui--text-center">
+          {this.state.alert}
+        </h3>
         <div className="mui-row">
           {this.state.grid.map((cell, index) =>(
             <GridCell
