@@ -38,15 +38,15 @@ class Home extends Component{
   }
 
   nextPlayer(player){
-    if(player === this.player1) this.automaticPlayerMove()
+    if(player === this.player1) this.secondPlayerMove()
     return
   }
 
   winner(){
     const player1 = this.state.grid.filter(grid => grid.player === this.player1).map(cell => cell.id)
     const player2 = this.state.grid.filter(grid => grid.player === this.player2).map(cell => cell.id)
-    const winner1 = successMatch.some(match => isEqual(player1, match))
-    const winner2 = successMatch.some(match => isEqual(player2, match))
+    const winner1 = successMatch.some(match => match.every(matchValue => player1.includes(matchValue)))
+    const winner2 = successMatch.some(match => match.every(matchValue => player2.includes(matchValue)))
     if(winner1) alert('player1 wins')
     if(winner2) alert('player2 wins')
     return winner1 || winner2
@@ -71,14 +71,14 @@ class Home extends Component{
     return promise
   }
 
-  automaticPlayerMove(){
+  secondPlayerMove(){
     this.randomValidMove().then(cellId => {
       setTimeout(()=> this.updateGrid(cellId, this.player2), 500)
     })
   }
 
-  playerMove(cellId){
-    this.updateGrid(cellId, this.player1)
+  firstPlayerMove(cellId){
+    if(!this.winner()) this.updateGrid(cellId, this.player1)
   }
 
 	render(){
@@ -91,7 +91,7 @@ class Home extends Component{
             key={index}
             id={cell.id}
             player={cell.player}
-            onCellClick={() => this.playerMove(cell.id)}
+            onCellClick={() => this.firstPlayerMove(cell.id)}
             />
           ))}
         </div>
