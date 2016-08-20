@@ -1,12 +1,18 @@
 import React, { Component } from 'react'
 import GridCell from './components/GridCell'
 import gridData from './components/gridData'
+import successMatch from './components/successMatch'
+import random from 'lodash/random'
+import isEqual from 'lodash/isEqual'
+
 
 class Home extends Component{
 
   constructor(props){
     super(props)
     this.updateGrid = this.updateGrid.bind(this)
+    this.player1 = 'player1'
+    this.player2 = 'automaticPlayer'
   }
 
   componentWillMount(){
@@ -15,20 +21,64 @@ class Home extends Component{
     })
   }
 
-  updateGrid(clickedCell){
+  updateGrid(clickedCell, player){
     const newGrid = this.state.grid.map(cell => {
-
-      if(cell.id === clickedCell.id && cell.player === 'none'){
-        cell.player = 'player1';
+      if(cell.id === clickedCell && cell.player === 'none'){
+        cell.player = player;
         return cell
       }
-
       return cell
     })
 
     this.setState({
       grid: newGrid
+    }, () => {
+      if(!this.winner()) this.nextPlayer(player)
     })
+  }
+
+  nextPlayer(player){
+    if(player === this.player1) this.automaticPlayerMove()
+    return
+  }
+
+  winner(){
+    const player1 = this.state.grid.filter(grid => grid.player === this.player1).map(cell => cell.id)
+    const player2 = this.state.grid.filter(grid => grid.player === this.player2).map(cell => cell.id)
+    const winner1 = successMatch.some(match => isEqual(player1, match))
+    const winner2 = successMatch.some(match => isEqual(player2, match))
+    if(winner1) alert('player1 wins')
+    if(winner2) alert('player2 wins')
+    return winner1 || winner2
+  }
+
+  randomValidMove(){
+    const promise = new Promise(resolve => {
+      const state = this.state
+      let autoCellId;
+      let isCellMarked;
+      randomMove()
+
+      resolve(autoCellId)
+
+      function randomMove(){
+        autoCellId = random(1,9);
+        isCellMarked = state.grid.some(cell => cell.id === autoCellId && cell.player !== 'none')
+        while(isCellMarked) randomMove()
+      }
+    })
+
+    return promise
+  }
+
+  automaticPlayerMove(){
+    this.randomValidMove().then(cellId => {
+      setTimeout(()=> this.updateGrid(cellId, this.player2), 500)
+    })
+  }
+
+  playerMove(cellId){
+    this.updateGrid(cellId, this.player1)
   }
 
 	render(){
@@ -41,7 +91,7 @@ class Home extends Component{
             key={index}
             id={cell.id}
             player={cell.player}
-            onCellClick={() => this.updateGrid(cell)}
+            onCellClick={() => this.playerMove(cell.id)}
             />
           ))}
         </div>
