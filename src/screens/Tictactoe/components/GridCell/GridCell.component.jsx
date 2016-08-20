@@ -1,4 +1,7 @@
 import React from 'react'
+// import styles from './GridCell.scss'
+//
+// console.log(styles);
 
 const cellStyle = {
   background:' #eee',
@@ -7,9 +10,14 @@ const cellStyle = {
   textAlign: 'center'
 }
 
-const markStyle = {
+const markStylePlayer1 = {
   fontSize: '460%',
   color: '#1976d2'
+}
+
+const markStylePlayer2 = {
+  fontSize: '460%',
+  color: '#f44336'
 }
 
 const GridCell = ({id, player, onCellClick}) => {
@@ -19,10 +27,8 @@ const GridCell = ({id, player, onCellClick}) => {
       className="mui-col-xs-4"
       onClick={onCellClick}
       >
-      <span style={markStyle}>
-        {player === 'player1' ? 'x' : ''}
-        {player === 'player2' ? 'o' : ''}
-      </span>
+        {player === 'player1' ? <span style={markStylePlayer1}>x</span> : ''}
+        {player === 'player2' ? <span style={markStylePlayer2}>o</span> : ''}
     </div>
   )
 }

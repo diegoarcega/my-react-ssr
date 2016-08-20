@@ -1,56 +1,27 @@
 import React, { Component } from 'react'
-import GridCell from './components/GridCell'
-import gridData from './gridData'
-import successMatch from './successMatch'
+import RaisedButton from 'material-ui/RaisedButton'
 import random from 'lodash/random'
 import isEqual from 'lodash/isEqual'
 
+import GridCell from './components/GridCell'
+import DataSet from './dataset'
+import successMatch from './successMatch'
 
-class Home extends Component{
+
+class TicTacToe extends Component{
 
   constructor(props){
     super(props)
     this.updateGrid = this.updateGrid.bind(this)
+    this.restart = this.restart.bind(this)
     this.player1 = 'player1'
     this.player2 = 'player2'
   }
 
   componentWillMount(){
     this.setState({
-      grid: [...gridData]
+      grid: DataSet.get()
     })
-  }
-
-  updateGrid(clickedCell, player){
-    if(this.state.gameOver) return
-    let alreadyChosen = false;
-    const newGrid = this.state.grid.map(cell => {
-      if(cell.id === clickedCell && cell.player === 'none'){
-        cell.player = player;
-        this.setState({alert: ''})
-        alreadyChosen = false;
-        return cell
-      }else if(cell.id === clickedCell && cell.player !== 'none'){
-        this.setState({alert: 'Cell already talken, choose another option'})
-        alreadyChosen = true;
-        return cell
-      }
-      return cell
-    })
-
-    if(alreadyChosen === false){
-      this.setState({
-        grid: newGrid
-      }, () => {
-        if(!this.winner()) this.nextPlayer(player)
-      })
-    }
-
-  }
-
-  nextPlayer(player){
-    if(player === this.player1) this.secondPlayerMove()
-    return
   }
 
   winner(){
@@ -60,9 +31,9 @@ class Home extends Component{
     const winner2 = successMatch.some(match => match.every(matchValue => player2.includes(matchValue)))
     const turns = this.state.grid.filter(cell => cell.player !== 'none').length
     const tie = !winner1 && !winner2 && turns === 9
-    if(winner1) this.setState({alert: `${this.player1} wins`, gameOver: true})
-    if(winner2) this.setState({alert: `${this.player2} wins`, gameOver: true})
-    if(tie) this.setState({alert: 'Tie, nobody wins', gameOver: true})
+    if(winner1) this.setState({alert: `${this.player1} wins!`, gameOver: true})
+    if(winner2) this.setState({alert: `${this.player2} wins!`, gameOver: true})
+    if(tie) this.setState({alert: 'Tie, nobody wins!', gameOver: true})
     return winner1 || winner2 || tie
   }
 
@@ -95,13 +66,50 @@ class Home extends Component{
     this.updateGrid(cellId, this.player1)
   }
 
+  nextPlayer(player){
+    if(player === this.player1) this.secondPlayerMove()
+    return
+  }
+
+  updateGrid(clickedCell, player){
+    if(this.state.gameOver) return
+    let alreadyChosen = false;
+    const newGrid = this.state.grid.map(cell => {
+      if(cell.id === clickedCell && cell.player === 'none'){
+        cell.player = player;
+        this.setState({alert: ''})
+        alreadyChosen = false;
+        return cell
+      }else if(cell.id === clickedCell && cell.player !== 'none'){
+        this.setState({alert: 'Cell already talken, choose another option'})
+        alreadyChosen = true;
+        return cell
+      }
+      return cell
+    })
+
+    if(alreadyChosen === false){
+      this.setState({
+        grid: newGrid
+      }, () => {
+        if(!this.winner()) this.nextPlayer(player)
+      })
+    }
+  }
+
+  restart(){
+    this.setState({
+      grid: DataSet.get(),
+      gameOver: false,
+      alert: ''
+    })
+  }
+
 	render(){
 		return(
 			<div>
         <h1>TicTacToe</h1>
-        <h3 className="mui--text-center">
-          {this.state.alert}
-        </h3>
+        <h3 className="mui--text-center">{this.state.alert}</h3>
         <div className="mui-row">
           {this.state.grid.map((cell, index) =>(
             <GridCell
@@ -112,9 +120,14 @@ class Home extends Component{
             />
           ))}
         </div>
+        <div className="mui-row">
+          <div className="mui-col-xs-12">
+            {this.state.gameOver ? <RaisedButton label="Play Again!" primary={true} onClick={this.restart} fullWidth={true} /> : ''}
+          </div>
+        </div>
 			</div>
 			)
 	}
 }
 
-export default Home
+export default TicTacToe
