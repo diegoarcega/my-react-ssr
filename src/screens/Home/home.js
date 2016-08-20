@@ -1,86 +1,50 @@
-import React from 'react'
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card'
-import FlatButton from 'material-ui/FlatButton'
+import React, { Component } from 'react'
+import GridCell from './components/GridCell'
+import gridData from './components/gridData'
 
+class Home extends Component{
 
+  constructor(props){
+    super(props)
+    this.updateGrid = this.updateGrid.bind(this)
+  }
 
-class Home extends React.Component{
+  componentWillMount(){
+    this.setState({
+      grid: gridData
+    })
+  }
+
+  updateGrid(clickedCell){
+    const newGrid = this.state.grid.map(cell => {
+
+      if(cell.id === clickedCell.id && cell.player === 'none'){
+        cell.player = 'player1';
+        return cell
+      }
+
+      return cell
+    })
+
+    this.setState({
+      grid: newGrid
+    })
+  }
+
 	render(){
-    let cardStyles = {
-        width: '25%'
-    }
-
 		return(
 			<div>
-        <h1>Postagens</h1>
+        <h1>TicTacToe</h1>
         <div className="mui-row">
-          <div className="mui-col-sm-4">
-              <Card>
-                <CardHeader
-                  title="URL Avatar"
-                  subtitle="Subtitle"
-                  avatar="https://pbs.twimg.com/profile_images/664169149002874880/z1fmxo00.jpg"
-                />
-                <CardText>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-                  Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-                  Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-                </CardText>
-                <CardMedia>
-                  <img src="http://bigcatrescue.org/wp-content/uploads/wp_photo_seller/14/watermark_TigerPhoto_JV007.jpg" />
-                </CardMedia>
-                <CardActions>
-                  <FlatButton label="Action1" />
-                  <FlatButton label="Action2" />
-                </CardActions>
-               </Card>
-           </div>
-            <div className="mui-col-sm-4">
-                <Card>
-                  <CardHeader
-                    title="URL Avatar"
-                    subtitle="Subtitle"
-                    avatar="https://pbs.twimg.com/profile_images/664169149002874880/z1fmxo00.jpg"
-                  />
-                  <CardText>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-                    Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-                    Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-                  </CardText>
-                  <CardMedia>
-                    <img src="http://bigcatrescue.org/wp-content/uploads/wp_photo_seller/14/watermark_TigerPhoto_JV007.jpg" />
-                  </CardMedia>
-                  <CardActions>
-                    <FlatButton label="Action1" />
-                    <FlatButton label="Action2" />
-                  </CardActions>
-                 </Card>
-             </div>
-             <div className="mui-col-sm-4">
-                 <Card>
-                   <CardHeader
-                     title="URL Avatar"
-                     subtitle="Subtitle"
-                     avatar="https://pbs.twimg.com/profile_images/664169149002874880/z1fmxo00.jpg"
-                   />
-                   <CardText>
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                     Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-                     Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-                     Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-                   </CardText>
-                   <CardMedia>
-                     <img src="http://bigcatrescue.org/wp-content/uploads/wp_photo_seller/14/watermark_TigerPhoto_JV007.jpg" />
-                   </CardMedia>
-                   <CardActions>
-                     <FlatButton label="Action1" />
-                     <FlatButton label="Action2" />
-                   </CardActions>
-                  </Card>
-              </div>
-            </div>
+          {this.state.grid.map((cell, index) =>(
+            <GridCell
+            key={index}
+            id={cell.id}
+            player={cell.player}
+            onCellClick={() => this.updateGrid(cell)}
+            />
+          ))}
+        </div>
 			</div>
 			)
 	}

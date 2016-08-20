@@ -18,10 +18,3 @@ const configureStore = () => {
 }
 
 export default configureStore
-
-
-// const configureStore = () => {
-// 	let chromeDevTools = window.devToolsExtension ? window.devToolsExtension() : f => f
-// 	let composed =  compose( applyMiddleware(thunk), chromeDevTools)
-// 	return createStore( rootReducers, composed)
-// }

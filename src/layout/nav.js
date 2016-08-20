@@ -57,9 +57,6 @@ class Nav extends Component {
               <p></p>
               <ul className="mui-list--unstyled mui-list--inline">
                   <li><IndexLink to="/home" style={anchorStyles} activeClassName="active">Home</IndexLink></li>
-                  <li><Link style={anchorStyles} activeClassName="active" to="/login">Login</Link></li>
-                  <li><Link style={anchorStyles} activeClassName="active" to="/todo">TodoList</Link></li>
-                  <li><Link style={anchorStyles} activeClassName="active" to="/highcharts">highcharts</Link></li>
               </ul>
             </div>
           </div>

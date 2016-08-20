@@ -22,8 +22,8 @@ var CONFIG = {
     module: {
           loaders: [
               { test: /\.(js|jsx)$/, exclude: /node_modules/, include: SRC_DIR, loader: 'babel-loader' },
-              // { test: /\.(css|scss)$/, loaders: ['style', 'css?modules&importLoaders=1&localIdentName=[local]_[hash:base64:5]', 'sass'] },
-              { test: /\.css$/, loader: "style-loader!css-loader" },
+              { test: /\.(css|scss)$/, loaders: ['style', 'css?modules&importLoaders=1&localIdentName=[local]_[hash:base64:5]', 'sass'] },
+              // { test: /\.(css|scss)$/, loader: "style-loader!css-loader" },
               { test: /\.jpg(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
               { test: /\.png(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
               { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml' }
