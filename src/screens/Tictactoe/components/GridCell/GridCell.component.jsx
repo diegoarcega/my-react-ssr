@@ -1,8 +1,19 @@
 import React from 'react'
-// import styles from './GridCell.scss'
-//
-// console.log(styles);
 
+const GridCell = ({id, player, onCellClick}) => {
+  return (
+    <div
+      style={cellStyle}
+      className="mui-col-xs-4"
+      onClick={onCellClick}
+      >
+        {player === 'player1' ? <span style={markStylePlayer1}>x</span> : ''}
+        {player === 'player2' ? <span style={markStylePlayer2}>o</span> : ''}
+    </div>
+  )
+}
+
+// react-css-modules doesnt work on universal app (found out now 21/08)
 const cellStyle = {
   background:' #eee',
   minHeight: '100px',
@@ -19,19 +30,5 @@ const markStylePlayer2 = {
   fontSize: '460%',
   color: '#f44336'
 }
-
-const GridCell = ({id, player, onCellClick}) => {
-  return (
-    <div
-      style={cellStyle}
-      className="mui-col-xs-4"
-      onClick={onCellClick}
-      >
-        {player === 'player1' ? <span style={markStylePlayer1}>x</span> : ''}
-        {player === 'player2' ? <span style={markStylePlayer2}>o</span> : ''}
-    </div>
-  )
-}
-
 
 export default GridCell
