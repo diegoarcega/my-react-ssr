@@ -93,11 +93,6 @@ class TicTacToe extends Component{
     })
   }
 
-  nextPlayer(currentPlayer){
-    if(currentPlayer === this.player1) this.computerMove()
-    return
-  }
-
   // my moves or a second human player(different tab) moves
   playerMove(cellId){
     const turns = this.state.grid.filter(cell => cell.player !== 'none').length
@@ -106,6 +101,12 @@ class TicTacToe extends Component{
 
     this.updateGame(cellId, this.currentPlayer)
   }
+  
+  nextPlayer(currentPlayer){
+    if(currentPlayer === this.player1) this.computerMove()
+    return
+  }
+
 
   // main method of the game, it upgrades the state of the game
   updateGame(clickedCell, player){

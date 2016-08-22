@@ -3,10 +3,14 @@
 2. npm run dev
 3. open [https://localhost:5000](https://localhost:5000)
 
+-----
+
 * Play against a dumb computer
 * Play 2 players mode(one in each browser's tab)
 
 *In 2 players mode you can play in another's turn, so do not cheat :)
+
+
 
 #### versions
     node
