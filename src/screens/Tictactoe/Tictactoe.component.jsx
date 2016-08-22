@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
 import random from 'lodash/random'
 import isEqual from 'lodash/isEqual'
+import request from 'axios'
 
 import GridCell from './components/GridCell'
 import DataSet from './dataset'
@@ -14,14 +15,31 @@ class TicTacToe extends Component{
     super(props)
     this.updateGrid = this.updateGrid.bind(this)
     this.restart = this.restart.bind(this)
+    this.update = this.update.bind(this)
     this.player1 = 'player1'
     this.player2 = 'player2'
+    this.currentPlayer = 'none'
   }
 
   componentWillMount(){
     this.setState({
-      grid: DataSet.get()
+      grid: DataSet.get(),
+      currentPlayer: 'none'
     })
+  }
+  componentDidMount(){
+    this.update()
+  }
+  update(){
+    setInterval(() => {
+      console.log('updating');
+      request('/api/tictactoe/get/current').then(response => {
+        this.setState({
+          grid: response.data.grid,
+          currentPlayer: response.data.currentPlayer
+        })
+      })
+    }, 2000)
   }
 
   winner(){
@@ -37,38 +55,42 @@ class TicTacToe extends Component{
     return winner1 || winner2 || tie
   }
 
-  randomValidMove(){
-    const promise = new Promise(resolve => {
-      const state = Object.assign({}, this.state)
-      let autoCellId;
-      let isCellMarked;
+  // randomValidMove(){
+  //   const promise = new Promise(resolve => {
+  //     const state = Object.assign({}, this.state)
+  //     let autoCellId;
+  //     let isCellMarked;
+  //
+  //     randomMove()
+  //     resolve(autoCellId)
+  //
+  //     function randomMove(){
+  //       autoCellId = random(1,9);
+  //       isCellMarked = state.grid.some(cell => cell.id === autoCellId && cell.player !== 'none')
+  //       while(isCellMarked) randomMove()
+  //     }
+  //   })
+  //
+  //   return promise
+  // }
 
-      randomMove()
-      resolve(autoCellId)
+  // secondPlayerMove(){
+  //   this.randomValidMove().then(cellId => {
+  //     setTimeout(()=> this.updateGrid(cellId, this.player2), 100)
+  //   })
+  // }
+  // nextPlayer(player){
+  //   if(player === this.player1) this.secondPlayerMove()
+  //   return
+  // }
 
-      function randomMove(){
-        autoCellId = random(1,9);
-        isCellMarked = state.grid.some(cell => cell.id === autoCellId && cell.player !== 'none')
-        while(isCellMarked) randomMove()
-      }
-    })
 
-    return promise
-  }
+  playerMove(cellId){
+    const turns = this.state.grid.filter(cell => cell.player !== 'none').length
+    if(turns % 2 === 1) this.currentPlayer = this.player1
+    else this.currentPlayer = this.player2
 
-  secondPlayerMove(){
-    this.randomValidMove().then(cellId => {
-      setTimeout(()=> this.updateGrid(cellId, this.player2), 100)
-    })
-  }
-
-  firstPlayerMove(cellId){
-    this.updateGrid(cellId, this.player1)
-  }
-
-  nextPlayer(player){
-    if(player === this.player1) this.secondPlayerMove()
-    return
+    this.updateGrid(cellId, this.currentPlayer)
   }
 
   updateGrid(clickedCell, player){
@@ -78,21 +100,27 @@ class TicTacToe extends Component{
       if(cell.id === clickedCell && cell.player === 'none'){
         cell.player = player;
         this.setState({alert: ''})
-        alreadyChosen = false;
+        alreadyChosen = false
         return cell
       }else if(cell.id === clickedCell && cell.player !== 'none'){
         this.setState({alert: 'Cell already talken, choose another option'})
-        alreadyChosen = true;
+        alreadyChosen = true
+        this.currentPlayer === this.player1 ? this.currentPlayer = this.player2 : this.currentPlayer = this.player1
         return cell
       }
       return cell
     })
 
     if(alreadyChosen === false){
+      request.post('/api/tictactoe/set', {
+        grid: newGrid,
+        currentPlayer: this.currentPlayer
+      })
       this.setState({
-        grid: newGrid
+        grid: newGrid,
+        currentPlayer: this.currentPlayer
       }, () => {
-        if(!this.winner()) this.nextPlayer(player)
+        this.winner()
       })
     }
   }
@@ -116,7 +144,7 @@ class TicTacToe extends Component{
             key={index}
             id={cell.id}
             player={cell.player}
-            onCellClick={() => this.firstPlayerMove(cell.id)}
+            onCellClick={() => this.playerMove(cell.id)}
             />
           ))}
         </div>

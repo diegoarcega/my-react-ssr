@@ -10,7 +10,7 @@ import routes from '../src/routes'
 import app from './middleware'
 import authAPI from './api/auth'
 import todosAPI from './api/todos'
-import postsAPI from './api/posts'
+import tictactoeAPI from './api/tictactoe'
 
 
 const MuiCSSstyles = fs.readFileSync(__dirname + '/../node_modules/muicss/lib/css/mui.min.css', 'utf-8')
@@ -21,7 +21,7 @@ const DIST_DIR = path.resolve(__dirname + '/../dist')
 // apis
 app.use('/api/auth', authAPI)
 app.use('/api/todos', todosAPI)
-app.use('/api/posts', postsAPI)
+app.use('/api/tictactoe', tictactoeAPI)
 
 // assets
 app.use('/assets/', express.static(DIST_DIR + '/assets'))

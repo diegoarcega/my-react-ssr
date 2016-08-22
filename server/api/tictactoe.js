@@ -1,18 +1,28 @@
 import express from 'express'
+import DataSet from './dataset'
 const router = express.Router()
 
+let state = {
+  grid: DataSet.get(),
+  currentPlayer: 'none',
+};
+
 router
-  .get('/get', (req, res)=>{
-    res.send('/get')
+  .get('/get/new', (req, res)=>{
+    res.send({
+      grid: DataSet.get(),
+      currentPlayer: 'none'
+    })
   })
-  .get('/create', (req, res) => {
-    res.json('/create')
+  .get('/get/current', (req, res)=>{
+    res.send(state)
   })
-  .get('/delete', (req, res) => {
-    res.json('/delete')
+  .post('/set', (req, res) => {
+    state = {
+      grid: req.body.grid,
+      currentPlayer: req.body.currentPlayer
+    }
   })
-  .get('/update', (req, res) => {
-    res.json('/update')
-  })
+
 
 export default router
