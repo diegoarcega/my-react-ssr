@@ -178,7 +178,7 @@ class TicTacToe extends Component{
           <div className="mui-row">
             <div className="mui-col-xs-12">
               <hr/>
-              <button className="mui-btn mui-btn--primary" onClick={this.restart}>Play Again! </button>
+              <button className="mui-btn mui-btn--accent" onClick={this.restart}>Play Again! </button>
               <hr/>
             </div>
           </div>
