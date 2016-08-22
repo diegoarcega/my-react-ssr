@@ -9,7 +9,6 @@ import configureStore from '../src/redux/configureStore'
 import routes from '../src/routes'
 import app from './middleware'
 import authAPI from './api/auth'
-import todosAPI from './api/todos'
 import tictactoeAPI from './api/tictactoe'
 
 
@@ -20,7 +19,6 @@ const DIST_DIR = path.resolve(__dirname + '/../dist')
 
 // apis
 app.use('/api/auth', authAPI)
-app.use('/api/todos', todosAPI)
 app.use('/api/tictactoe', tictactoeAPI)
 
 // assets
