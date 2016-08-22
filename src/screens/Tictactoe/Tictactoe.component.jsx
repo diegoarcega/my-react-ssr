@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import RaisedButton from 'material-ui/RaisedButton'
 import random from 'lodash/random'
 import isEqual from 'lodash/isEqual'
 
@@ -101,7 +100,7 @@ class TicTacToe extends Component{
 
     this.updateGame(cellId, this.currentPlayer)
   }
-  
+
   nextPlayer(currentPlayer){
     if(currentPlayer === this.player1) this.computerMove()
     return
@@ -179,7 +178,7 @@ class TicTacToe extends Component{
           <div className="mui-row">
             <div className="mui-col-xs-12">
               <hr/>
-              <RaisedButton label="Play Again!" primary={true} onClick={this.restart} fullWidth={true} />
+              <button className="mui-btn mui-btn--primary" onClick={this.restart}>Play Again! </button>
               <hr/>
             </div>
           </div>
@@ -188,17 +187,17 @@ class TicTacToe extends Component{
         {!this.state.start || this.state.gameOver ?
         <div>
           <div>
-            <RaisedButton label="Play against a dumb computer" primary={true} fullWidth={true} onClick={()=> {
+            <button className="mui-btn mui-btn--primary" onClick={()=> {
               this.playAgainstComputer = true
               this.restart()
-            }} />
+            }} >Play against a dumb computer</button>
           </div>
           <hr/>
           <div>
-            <RaisedButton label="2 players mode" primary={true} fullWidth={true} onClick={()=> {
+            <button className="mui-btn mui-btn--primary" onClick={()=> {
               this.playAgainstComputer = false
               this.restart()
-            }} />
+            }} >2 players mode</button>
           </div>
         </div>
         : ''}

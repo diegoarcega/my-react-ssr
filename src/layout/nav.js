@@ -1,10 +1,4 @@
 import React, { Component } from 'react'
-import AppBar from 'material-ui/AppBar'
-import Drawer from 'material-ui/Drawer'
-import MenuItem from 'material-ui/MenuItem'
-import IconButton from 'material-ui/IconButton'
-import NavigationClose from 'material-ui/svg-icons/navigation/close'
-import Divider from 'material-ui/Divider'
 import { Link, IndexLink } from 'react-router'
 
 let anchorStyles = {
@@ -13,7 +7,6 @@ let anchorStyles = {
 
 const Nav = () => (
   <div>
-    <AppBar title="TicTacToe" showMenuIconButton={false}/>
     <div className="mui-container">
       <div className="mui-row">
         <div className="mui-col-xs-12">
@@ -25,7 +18,6 @@ const Nav = () => (
       </div>
     </div>
     <div className="mui--clearfix"></div>
-    <Divider/>
   </div>
 )
 
