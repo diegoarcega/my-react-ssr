@@ -13,7 +13,7 @@ import todosAPI from './api/todos'
 import postsAPI from './api/posts'
 
 
-let MuiCSSstyles = fs.readFileSync(__dirname + '/../node_modules/muicss/lib/css/mui.min.css', 'utf-8')
+const MuiCSSstyles = fs.readFileSync(__dirname + '/../node_modules/muicss/lib/css/mui.min.css', 'utf-8')
 
 
 const DIST_DIR = path.resolve(__dirname + '/../dist')
